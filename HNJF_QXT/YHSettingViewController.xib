@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YHSettingViewController">
+            <connections>
+                <outlet property="bindEmailGesture" destination="ksT-xo-m27" id="TgO-ad-X2r"/>
+                <outlet property="bindPhoneGesture" destination="7IX-bb-STI" id="AcF-EN-yH3"/>
+                <outlet property="logoutButton" destination="sBB-jy-z7k" id="pdL-HG-22Y"/>
+                <outlet property="settingPasswordGesture" destination="OOE-ap-je3" id="sQA-0I-nDL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aKW-Hz-OnJ">
+                    <rect key="frame" x="0.0" y="76" width="375" height="260"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZqT-kB-zIa">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaF-Ad-7mR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定手机" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLb-JM-aTl">
+                                            <rect key="frame" x="20" y="16" width="56" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="FLb-JM-aTl" firstAttribute="leading" secondItem="PaF-Ad-7mR" secondAttribute="leading" constant="20" id="3BX-Qo-74E"/>
+                                        <constraint firstItem="FLb-JM-aTl" firstAttribute="centerY" secondItem="PaF-Ad-7mR" secondAttribute="centerY" id="HNZ-Z3-Ez2"/>
+                                        <constraint firstAttribute="height" constant="50" id="fzh-wX-oZD"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="7IX-bb-STI" appends="YES" id="LU3-oF-z7w"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2y-O0-1zR">
+                                    <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zs-3q-LyQ">
+                                            <rect key="frame" x="20" y="16" width="56" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="6Zs-3q-LyQ" firstAttribute="leading" secondItem="A2y-O0-1zR" secondAttribute="leading" constant="20" id="fVH-b3-ZOY"/>
+                                        <constraint firstItem="6Zs-3q-LyQ" firstAttribute="centerY" secondItem="A2y-O0-1zR" secondAttribute="centerY" id="uQn-i0-Z7q"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="ksT-xo-m27" appends="YES" id="Mph-Xs-6uL"/>
+                                    </connections>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7OS-cO-hZh">
+                            <rect key="frame" x="0.0" y="110" width="375" height="150"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0N-b9-wL2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaH-52-IPx">
+                                            <rect key="frame" x="23" y="14" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="coC-aU-2IL"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5T-ny-gfO">
+                                    <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付账户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3y-rn-w4c">
+                                            <rect key="frame" x="23" y="16" width="56" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="p3y-rn-w4c" firstAttribute="centerY" secondItem="T5T-ny-gfO" secondAttribute="centerY" id="dCX-CH-i3j"/>
+                                        <constraint firstItem="p3y-rn-w4c" firstAttribute="leading" secondItem="T5T-ny-gfO" secondAttribute="leading" constant="23" id="zOl-Fv-vKL"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1c-lI-hh8">
+                                    <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wth-TH-Mzh">
+                                            <rect key="frame" x="22" y="16" width="56" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="wth-TH-Mzh" firstAttribute="centerY" secondItem="h1c-lI-hh8" secondAttribute="centerY" id="9Qf-Vy-qgW"/>
+                                        <constraint firstItem="wth-TH-Mzh" firstAttribute="leading" secondItem="h1c-lI-hh8" secondAttribute="leading" constant="22" id="PGB-Tv-dod"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="OOE-ap-je3" appends="YES" id="6R7-rg-6tz"/>
+                                    </connections>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-jy-z7k">
+                    <rect key="frame" x="20" y="376" width="335" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="RsK-ZV-vMl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="退出登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="sBB-jy-z7k" firstAttribute="top" secondItem="aKW-Hz-OnJ" secondAttribute="bottom" constant="40" id="EGH-Cf-xKa"/>
+                <constraint firstItem="aKW-Hz-OnJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F1m-aN-mAX"/>
+                <constraint firstAttribute="trailing" secondItem="aKW-Hz-OnJ" secondAttribute="trailing" id="IbS-sZ-hFD"/>
+                <constraint firstItem="sBB-jy-z7k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Y44-Yy-OmC"/>
+                <constraint firstAttribute="trailing" secondItem="sBB-jy-z7k" secondAttribute="trailing" constant="20" id="euN-Rn-Vey"/>
+                <constraint firstItem="aKW-Hz-OnJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="lP0-vg-uf1"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+        <tapGestureRecognizer id="7IX-bb-STI"/>
+        <tapGestureRecognizer id="ksT-xo-m27"/>
+        <tapGestureRecognizer id="OOE-ap-je3"/>
+    </objects>
+</document>

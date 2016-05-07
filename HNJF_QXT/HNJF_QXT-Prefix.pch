@@ -1,0 +1,29 @@
+//
+//  HNJF_QXT-Prefix.pch
+//  HNJF_QXT
+//
+//  Created by 江伟 on 16/3/28.
+//  Copyright © 2016年 jiangw. All rights reserved.
+//
+
+#ifndef HNJF_QXT_Prefix_pch
+#define HNJF_QXT_Prefix_pch
+
+#ifdef __OBJC__
+
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <Reachability/Reachability.h>
+#import <Masonry/Masonry.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+
+#import "APPConfig.h"
+#import "APIConfig.h"
+#import "YHMacro.h"
+#import "YHAppDelegate.h"
+#import "YHInstanceType.h"
+
+#endif
+
+#endif /* HNJF_QXT_Prefix_pch */
