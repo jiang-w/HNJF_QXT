@@ -14,11 +14,11 @@
 
 - (RACSignal *)homePageDataSignal {
     RACSignal *bannerSignal = [[RdServiceAPI sharedInstance]
-                               signalWithServiceApi:RDAPI_Index_Banner andParamters:nil];
+                               signalWithServiceAPI:RDAPI_Index_Banner Parameters:nil];
     RACSignal *onceProductSignal = [[RdServiceAPI sharedInstance]
-                                    signalWithServiceApi:RDAPI_Index_NewHand andParamters:nil];
+                                    signalWithServiceAPI:RDAPI_Index_NewHand Parameters:nil];
     RACSignal *highYieldSignal = [[RdServiceAPI sharedInstance]
-                                  signalWithServiceApi:RDAPI_Index_BorrowIndex andParamters:nil];
+                                  signalWithServiceAPI:RDAPI_Index_BorrowIndex Parameters:nil];
     
     return [RACSignal combineLatest:@[bannerSignal, onceProductSignal, highYieldSignal]
                              reduce:^id (NSDictionary *s1, NSDictionary *s2, NSDictionary *s3) {
@@ -83,7 +83,7 @@
 - (RACSignal *)highMarginListSignalWithPage:(NSInteger)page andOrder:(NSInteger)order {
     NSDictionary *params = @{@"page": @(page), @"order": @(order)};
     return [[[RdServiceAPI sharedInstance]
-             signalWithServiceApi:RDAPI_Invest_InvestList andParamters:params]
+             signalWithServiceAPI:RDAPI_Invest_InvestList Parameters:params]
             map:^id(NSDictionary *responseData) {
                 return responseData;
             }];
@@ -92,7 +92,7 @@
 - (RACSignal *)highMarginDetailSignalWithId:(NSInteger)productId {
     NSDictionary *params = @{@"borrowId": @(productId)};
     return [[[RdServiceAPI sharedInstance]
-             signalWithServiceApi:RDAPI_Invest_Detail andParamters:params]
+             signalWithServiceAPI:RDAPI_Invest_Detail Parameters:params]
             map:^id(NSDictionary *responseData) {
                 NSDictionary *dict = responseData[@"date"][@"content"];
                 return dict;
@@ -102,7 +102,7 @@
 - (RACSignal *)bondListDataSignalWithPage:(NSInteger)page andOrder:(NSInteger)order {
     NSDictionary *params = @{@"page": @(page), @"order": @(order)};
     return [[[RdServiceAPI sharedInstance]
-             signalWithServiceApi:RDAPI_Bond_List andParamters:params]
+             signalWithServiceAPI:RDAPI_Bond_List Parameters:params]
             map:^id(NSDictionary *responseData) {
                 return responseData;
             }];

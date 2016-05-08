@@ -55,6 +55,13 @@
 
 @end
 
+
+@interface RdServiceAPI ()
+
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+
+@end
+
 @implementation RdServiceAPI
 
 + (instancetype)sharedInstance {
@@ -66,69 +73,52 @@
     return sharedInstance;
 }
 
-- (NSString*)urlStringWithAPI:(NSString*)api {
-    return [NSString stringWithFormat:@"%@%@", PRODUCT_SERVER_URL, api];
+- (instancetype)init {
+    if (self = [super init]) {
+        self.sessionManager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:PRODUCT_SERVER_URL]];
+        self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+//        self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"application/x-json", @"text/plain", nil];
+        [self.sessionManager.requestSerializer setTimeoutInterval:15];
+    }
+    return self;
 }
 
-- (RACSignal *)signalWithServiceAPI:(NSString *)apiName parameters:(NSDictionary *)params {
+- (RACSignal *)signalWithServiceAPI:(NSString *)apiName Parameters:(NSDictionary *)params {
+    @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        NSString *url = [self urlStringWithAPI:apiName];
+        @strongify(self)
         NSDictionary *requestParams = [self getRequsetParameters:params];
-        
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"application/x-json", @"text/plain", nil];
-        [manager.requestSerializer setTimeoutInterval:15];
-        NSURLSessionDataTask *task = [manager POST:url parameters:requestParams progress:nil
-                                           success:^(NSURLSessionDataTask *task, id responseObject) {
-                                               RdServiceAPIResult *result = [RdServiceAPIResult resultWithDictionary:responseObject];
-                                               [subscriber sendNext:result];
-                                               [subscriber sendCompleted];
-                                           }
-                                           failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                               RdServiceAPIResult *result = [RdServiceAPIResult resultWithError:error];
-                                               [subscriber sendNext:result];
-                                               [subscriber sendCompleted];
-                                           }];
+        NSURLSessionDataTask *task = [self.sessionManager
+                                      GET:apiName
+                                      parameters:requestParams
+                                      progress:nil
+                                      success:^(NSURLSessionDataTask *task, id responseObject) {
+                                          RdServiceAPIResult *result = [RdServiceAPIResult resultWithDictionary:responseObject];
+                                          if (result.code == kRdServiceResultSuccess || result.code == kRdServiceResultNoData) {
+                                              [subscriber sendNext:result.responseData];
+                                              [subscriber sendCompleted];
+                                          }
+                                          else {
+                                              NSError *error = [NSError
+                                                                errorWithDomain:API_ERROR_DOMAIN
+                                                                code:result.code
+                                                                userInfo:@{@"msg": result.message}];
+                                              [subscriber sendError:error];
+                                          }
+                                      }
+                                      failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                          NSError *resetError = [NSError
+                                                                 errorWithDomain:API_ERROR_DOMAIN
+                                                                 code:kRdServiceNetworkingFailure
+                                                                 userInfo:@{@"msg": @"服务请求出错"}];
+                                          [subscriber sendError:resetError];
+                                      }];
         return [RACDisposable disposableWithBlock:^{
-            [task cancel];
-            NSLog(@"Service network signal disposed!");
-        }];
-    }];
-}
-
-- (RACSignal *)signalWithServiceApi:(NSString *)apiName andParamters:(NSDictionary *)params {
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        NSString *url = [self urlStringWithAPI:apiName];
-        NSDictionary *requestParams = [self getRequsetParameters:params];
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"application/x-json", @"text/plain", nil];
-        [manager.requestSerializer setTimeoutInterval:15];
-        NSURLSessionDataTask *task = [manager POST:url parameters:requestParams progress:nil
-                                           success:^(NSURLSessionDataTask *task, id responseObject) {
-                                               RdServiceAPIResult *result = [RdServiceAPIResult resultWithDictionary:responseObject];
-                                               if (result.code == kRdServiceResultSuccess || result.code == kRdServiceResultNoData) {
-                                                   [subscriber sendNext:result.responseData];
-                                                   [subscriber sendCompleted];
-                                               }
-                                               else {
-                                                   NSError *error = [NSError
-                                                                     errorWithDomain:API_ERROR_DOMAIN
-                                                                     code:result.code
-                                                                     userInfo:@{@"msg": result.message}];
-                                                   [subscriber sendError:error];
-                                               }
-                                           }
-                                           failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                               NSError *resetError = [NSError
-                                                                      errorWithDomain:API_ERROR_DOMAIN
-                                                                      code:kRdServiceNetworkingFailure
-                                                                      userInfo:@{@"msg": @"服务请求出错"}];
-                                               [subscriber sendError:resetError];
-                                           }];
-        
-        return [RACDisposable disposableWithBlock:^{
-            [task cancel];
-//            NSLog(@"Service network signal disposed!");
+            if (task.state != NSURLSessionTaskStateCompleted) {
+                [task cancel];
+                NSLog(@"Service network signal disposed!");
+            }
         }];
     }];
 }

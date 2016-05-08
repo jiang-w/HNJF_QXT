@@ -14,8 +14,8 @@
 
 - (RACSignal *)loginWithUserName:(NSString *)username password:(NSString *)password {
     return [[[[RdServiceAPI sharedInstance]
-              signalWithServiceApi:RDAPI_User_DoLogin
-              andParamters:@{@"userName": username, @"pwd": password}]
+              signalWithServiceAPI:RDAPI_User_DoLogin
+              Parameters:@{@"userName": username, @"pwd": password}]
              map:^id(NSDictionary *dict) {
                  YHUserProfile *userInfo = [[YHUserProfile alloc] init];
                  userInfo = [[YHUserProfile alloc] init];
@@ -27,8 +27,8 @@
              }]
             flattenMap:^RACStream *(YHUserProfile *userInfo) {
                 return [[[RdServiceAPI sharedInstance]
-                         signalWithServiceApi:RDAPI_Account_Basic
-                         andParamters:@{@"userId": userInfo.identity, @"oauth_token": userInfo.accessToken}]
+                         signalWithServiceAPI:RDAPI_Account_Basic
+                         Parameters:@{@"userId": userInfo.identity, @"oauth_token": userInfo.accessToken}]
                         map:^id(NSDictionary *dict) {
                             userInfo.phoneNumber = dict[@"userIdentify"][@"phone"];
                             userInfo.eMail = dict[@"userIdentify"][@"email"];
@@ -49,7 +49,7 @@
 - (RACSignal *)validPhoneNumber:(NSString *)phone {
     NSDictionary *params = @{@"pwdIdentify": phone};
     return [[[RdServiceAPI sharedInstance]
-             signalWithServiceAPI:RDAPI_User_CheckUsernameAvailable parameters:params]
+             signalWithServiceAPI:RDAPI_User_CheckUsernameAvailable Parameters:params]
             flattenMap:^RACStream *(RdServiceAPIResult *result) {
                 return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                     if (result.code == kRdServiceResultSuccess) {
@@ -68,7 +68,7 @@
     NSDictionary *params = @{@"noticeId": @"notice_reg",
                              @"receiveAddr": phoneNumber,
                              @"type": @"mobilePhone"};
-    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_GetCode parameters:params] flattenMap:^RACStream *(RdServiceAPIResult *result) {
+    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_GetCode Parameters:params] flattenMap:^RACStream *(RdServiceAPIResult *result) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             if (result.code == kRdServiceResultSuccess) {
                 [subscriber sendCompleted];
@@ -85,7 +85,7 @@
 - (RACSignal *)registerUserWithPhoneNumber:(NSString *)phone andPassword:(NSString *)password {
     NSDictionary *params = @{@"registerPhone": phone,
                              @"pwd": password};
-    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_DoRegister parameters:params] flattenMap:^RACStream *(RdServiceAPIResult *result) {
+    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_DoRegister Parameters:params] flattenMap:^RACStream *(RdServiceAPIResult *result) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             if (result.code == kRdServiceResultSuccess) {
                 [subscriber sendCompleted];
@@ -104,7 +104,7 @@
                              @"newPwd": replacePassword,
                              @"type": @"userpwd"
                              };
-    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_Account_ModifyPwd parameters:params]
+    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_Account_ModifyPwd Parameters:params]
             flattenMap:^RACStream *(RdServiceAPIResult *result) {
                 return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                     if (result.code == kRdServiceResultSuccess) {
@@ -125,7 +125,7 @@
                              @"noticeId": @"get_pwd_phone",
                              @"type": @"mobilePhone"};
     return [[[RdServiceAPI sharedInstance]
-             signalWithServiceApi:RDAPI_User_CheckCode andParamters:params]
+             signalWithServiceAPI:RDAPI_User_CheckCode Parameters:params]
             map:^id(NSDictionary *responseData) {
                 return responseData;
             }];

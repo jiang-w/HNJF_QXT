@@ -32,10 +32,6 @@
 
 + (instancetype)sharedInstance;
 
-- (NSString*)urlStringWithAPI:(NSString*)api;
-
-- (RACSignal *)signalWithServiceAPI:(NSString *)apiName parameters:(NSDictionary *)params;
-
-- (RACSignal *)signalWithServiceApi:(NSString *)apiName andParamters:(NSDictionary *)params;
+- (RACSignal *)signalWithServiceAPI:(NSString *)apiName Parameters:(NSDictionary *)params;
 
 @end
