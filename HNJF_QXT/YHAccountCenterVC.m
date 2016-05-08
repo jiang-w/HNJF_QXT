@@ -36,11 +36,15 @@
                                                 circle_percent_color_2,
                                                 circle_percent_color_3]
                                      animated:YES];
-    [self.percentCircle startPercentCircleAnimation];
-    
     [self.colorDot1 updateWithColor:circle_percent_color_1];
     [self.colorDot2 updateWithColor:circle_percent_color_2];
     [self.colorDot3 updateWithColor:circle_percent_color_3];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.percentCircle startPercentCircleAnimation];
 }
 
 - (void)bindViewModel {

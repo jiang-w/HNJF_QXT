@@ -33,7 +33,6 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    NSLog(@"%@", NSStringFromCGRect(self.bounds));
     CGPoint centerPoint = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     CGFloat radius = (CGRectGetMidX(self.bounds) > CGRectGetMidY(self.bounds) ? CGRectGetMidY(self.bounds) : CGRectGetMidX(self.bounds));
     UIBezierPath *circlePath = [UIBezierPath
