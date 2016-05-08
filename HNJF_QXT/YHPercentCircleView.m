@@ -21,28 +21,14 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        _layerArr = [NSMutableArray arrayWithCapacity:0];
-        _numbers  = [NSMutableArray arrayWithCapacity:0];
-        _colors   = [NSMutableArray arrayWithCapacity:0];
-        _circleLineWidth = 20;
-        _backgroundCircleLineWidth = 20;
-        _backgroundStrokeColor = [UIColor whiteColor];
-        _durationTime = 0.8;
-        _isAnimation = NO;
+        [self setDefaultParameters];
     }
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        _layerArr = [NSMutableArray arrayWithCapacity:0];
-        _numbers  = [NSMutableArray arrayWithCapacity:0];
-        _colors   = [NSMutableArray arrayWithCapacity:0];
-        _circleLineWidth = 20;
-        _backgroundCircleLineWidth = 20;
-        _backgroundStrokeColor = [UIColor whiteColor];
-        _durationTime = 0.8;
-        _isAnimation = NO;
+        [self setDefaultParameters];
     }
     return self;
 }
@@ -51,6 +37,17 @@
     [super layoutSubviews];
     
     [self strokeCircle];
+}
+
+- (void)setDefaultParameters {
+    self.layerArr = [NSMutableArray arrayWithCapacity:0];
+    self.numbers  = [NSMutableArray arrayWithCapacity:0];
+    self.colors   = [NSMutableArray arrayWithCapacity:0];
+    self.circleLineWidth = 20;
+    self.backgroundCircleLineWidth = 20;
+    self.backgroundStrokeColor = [UIColor whiteColor];
+    self.durationTime = 0.8;
+    self.isAnimation = NO;
 }
 
 - (void)strokeCircle {

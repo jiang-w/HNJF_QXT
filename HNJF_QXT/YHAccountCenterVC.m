@@ -9,13 +9,17 @@
 #import "YHAccountCenterVC.h"
 #import "YHAccountCenterVM.h"
 #import "YHPercentCircleView.h"
+#import "YHColorDot.h"
 
 @interface YHAccountCenterVC ()
 
 @property (weak, nonatomic) IBOutlet YHPercentCircleView *percentCircle;
-@property (weak, nonatomic) IBOutlet UIButton *rechargeButton;
-@property (weak, nonatomic) IBOutlet UIButton *withdrawButton;
-@property (weak, nonatomic) IBOutlet UIButton *settingButton;
+@property (weak, nonatomic) IBOutlet YHColorDot          *colorDot1;
+@property (weak, nonatomic) IBOutlet YHColorDot          *colorDot2;
+@property (weak, nonatomic) IBOutlet YHColorDot          *colorDot3;
+@property (weak, nonatomic) IBOutlet UIButton            *rechargeButton;
+@property (weak, nonatomic) IBOutlet UIButton            *withdrawButton;
+@property (weak, nonatomic) IBOutlet UIButton            *settingButton;
 @property (nonatomic, strong) YHAccountCenterVM *viewModel;
 
 @end
@@ -33,6 +37,10 @@
                                                 circle_percent_color_3]
                                      animated:YES];
     [self.percentCircle startPercentCircleAnimation];
+    
+    [self.colorDot1 updateWithColor:circle_percent_color_1];
+    [self.colorDot2 updateWithColor:circle_percent_color_2];
+    [self.colorDot3 updateWithColor:circle_percent_color_3];
 }
 
 - (void)bindViewModel {
