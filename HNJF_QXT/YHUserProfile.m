@@ -1,5 +1,5 @@
 //
-//  YHUserInfo.m
+//  YHUserProfile.m
 //  HNJF_QXT
 //
 //  Created by 江伟 on 16/4/10.
@@ -24,6 +24,7 @@ static YHUserProfile *currtUser;
     if (self = [super init]) {
         _allowGesturePassword = NO;
         _allowTouchId = NO;
+        _account = [[YHAccountInfo alloc] init];
     }
     return self;
 }

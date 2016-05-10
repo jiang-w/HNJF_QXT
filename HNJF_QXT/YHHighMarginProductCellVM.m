@@ -43,20 +43,17 @@
                                                 }];
     RAC(self, lowestAmount) = [RACObserve(self.product, lowestAmount)
                                map:^id(id value) {
-                                   NSString *moneyString = [NSString stringFromNumber:value withStyle:NSNumberFormatterDecimalStyle];
-                                   return [NSString stringWithFormat:@"%@元起", moneyString];
+                                   return [NSString stringWithFormat:@"%@元起", [NSString decimalStyleStringFromNumber:value]];
                                }];
     RAC(self, mostAmount) = [RACObserve(self.product, mostAmount)
                              map:^id(id value) {
-                                 NSString *moneyString = [NSString stringFromNumber:value withStyle:NSNumberFormatterDecimalStyle];
-                                 return [NSString stringWithFormat:@"限额:%@元", moneyString];
+                                 return [NSString stringWithFormat:@"限额:%@元", [NSString decimalStyleStringFromNumber:value]];
                              }];
     RAC(self, surplusAmount) = [RACSignal
                                 combineLatest:@[RACObserve(self.product, totalAmount),
                                                 RACObserve(self.product, soldAmount)] reduce:^id (id value1, id value2){
                                                     double surplus = [value1 doubleValue] - [value2 doubleValue];
-                                                    NSString *moneyString = [NSString stringFromNumber:@(surplus) withStyle:NSNumberFormatterDecimalStyle];
-                                                    return [NSString stringWithFormat:@"剩余可投:%@元", moneyString];
+                                                    return [NSString stringWithFormat:@"剩余可投:%@元", [NSString decimalStyleStringFromNumber:@(surplus)]];
                                                 }];
     RAC(self, saleScale) = RACObserve(self.product, saleScale);
 }

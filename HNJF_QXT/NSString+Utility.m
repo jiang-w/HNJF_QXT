@@ -72,11 +72,18 @@
     return [pred evaluateWithObject:self];
 }
 
-+ (NSString *)stringFromNumber:(NSNumber *)number withStyle:(NSNumberFormatterStyle)style {
++ (NSString *)decimalStyleStringFromNumber:(NSNumber *)number {
     NSNumberFormatter *numFormatter = [[NSNumberFormatter alloc] init];
-    [numFormatter setNumberStyle:style];
+    [numFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
     NSString *priceStr = [numFormatter stringFromNumber:number];
     return priceStr;
+}
+
++ (NSString *)currencyStyleStringFromNumber:(NSNumber *)number {
+    NSNumberFormatter *numFormatter = [[NSNumberFormatter alloc] init];
+    [numFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSString *priceStr = [numFormatter stringFromNumber:number];
+    return [priceStr substringFromIndex:1];
 }
 
 @end

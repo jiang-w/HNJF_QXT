@@ -76,7 +76,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.sessionManager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:PRODUCT_SERVER_URL]];
-        self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        self.sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
 //        self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
         self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"application/x-json", @"text/plain", nil];
         [self.sessionManager.requestSerializer setTimeoutInterval:15];
@@ -90,7 +90,7 @@
         @strongify(self)
         NSDictionary *requestParams = [self getRequsetParameters:params];
         NSURLSessionDataTask *task = [self.sessionManager
-                                      GET:apiName
+                                      POST:apiName
                                       parameters:requestParams
                                       progress:nil
                                       success:^(NSURLSessionDataTask *task, id responseObject) {

@@ -1,5 +1,5 @@
 //
-//  YHUserInfo.h
+//  YHUserProfile.h
 //  HNJF_QXT
 //
 //  Created by 江伟 on 16/4/10.
@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YHAccountInfo.h"
 
 @interface YHUserProfile : NSObject
 
@@ -19,6 +20,7 @@
 @property (nonatomic, assign) BOOL     allowGesturePassword;
 @property (nonatomic, assign) BOOL     allowTouchId;
 @property (nonatomic, copy  ) NSString *accessToken;
+@property (nonatomic, strong) YHAccountInfo *account;
 
 + (YHUserProfile *)currentUser;
 

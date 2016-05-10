@@ -61,13 +61,21 @@
 - (BOOL)validateStringWithRegex:(NSString *)regex;
 
 /**
- *  格式化数字
+ *  数字格式化为数值样式字符串
  *
  *  @param number 数值
- *  @param style  格式化样式
  *
  *  @return 格式化后的字符串
  */
-+ (NSString *)stringFromNumber:(NSNumber *)number withStyle:(NSNumberFormatterStyle)style;
++ (NSString *)decimalStyleStringFromNumber:(NSNumber *)number;
+
+/**
+ *  数字格式化为货币样式字符串（不带货币符号）
+ *
+ *  @param number 数值
+ *
+ *  @return 格式化后的字符串
+ */
++ (NSString *)currencyStyleStringFromNumber:(NSNumber *)number;
 
 @end

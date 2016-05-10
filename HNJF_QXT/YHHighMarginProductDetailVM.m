@@ -63,14 +63,11 @@
             self.closedPeriod = [NSString stringWithFormat:@"项目期限%d个月", product.timeLimit];
         }
         
-        self.lowestAmount = [NSString stringWithFormat:@"起投金额%@元",
-                             [NSString stringFromNumber:@(product.lowestAmount) withStyle:NSNumberFormatterDecimalStyle]];
+        self.lowestAmount = [NSString stringWithFormat:@"起投金额%@元", [NSString decimalStyleStringFromNumber:@(product.lowestAmount)]];
         
-        self.surplusAmount = [NSString stringWithFormat:@"可投金额%@元",
-                              [NSString stringFromNumber:@(product.totalAmount - product.soldAmount) withStyle:NSNumberFormatterDecimalStyle]];
+        self.surplusAmount = [NSString stringWithFormat:@"可投金额%@元", [NSString decimalStyleStringFromNumber:@(product.totalAmount - product.soldAmount)]];
         
-        self.totalAmount = [NSString stringWithFormat:@"项目总额%@元",
-                            [NSString stringFromNumber:@(product.totalAmount) withStyle:NSNumberFormatterDecimalStyle]];
+        self.totalAmount = [NSString stringWithFormat:@"项目总额%@元", [NSString decimalStyleStringFromNumber:@(product.totalAmount)]];
         
         self.saleScale = product.saleScale;
     }];

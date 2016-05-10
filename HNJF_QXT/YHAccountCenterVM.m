@@ -73,18 +73,12 @@
                  }]
                 doNext:^(YHAccountInfo *accountInfo) {
                     @strongify(self)
-                    self.totalBalance      = [NSString stringFromNumber:@(accountInfo.totalBalance)
-                                                              withStyle:NSNumberFormatterDecimalStyle];
-                    self.availableBalance  = [NSString stringFromNumber:@(accountInfo.availableBalance)
-                                                              withStyle:NSNumberFormatterDecimalStyle];
-                    self.blockedBalance    = [NSString stringFromNumber:@(accountInfo.blockedBalance)
-                                                              withStyle:NSNumberFormatterDecimalStyle];
-                    self.receivableBalance = [NSString stringFromNumber:@(accountInfo.receivableBalance)
-                                                              withStyle:NSNumberFormatterDecimalStyle];
-                    self.totalIncome       = [NSString stringFromNumber:@(accountInfo.totalIncome)
-                                                              withStyle:NSNumberFormatterDecimalStyle];
-                    self.lastIncome        = [NSString stringFromNumber:@(accountInfo.lastIncome)
-                                                              withStyle:NSNumberFormatterDecimalStyle];
+                    self.totalBalance      = [NSString currencyStyleStringFromNumber:@(accountInfo.totalBalance)];
+                    self.availableBalance  = [NSString currencyStyleStringFromNumber:@(accountInfo.availableBalance)];
+                    self.blockedBalance    = [NSString currencyStyleStringFromNumber:@(accountInfo.blockedBalance)];
+                    self.receivableBalance = [NSString currencyStyleStringFromNumber:@(accountInfo.receivableBalance)];
+                    self.totalIncome       = [NSString currencyStyleStringFromNumber:@(accountInfo.totalIncome)];
+                    self.lastIncome        = [NSString currencyStyleStringFromNumber:@(accountInfo.lastIncome)];
                     
                     self.availableRate  = accountInfo.totalBalance != 0 ? accountInfo.availableBalance / accountInfo.totalBalance : 0;
                     self.blockedRate    = accountInfo.totalBalance != 0 ? accountInfo.blockedBalance / accountInfo.totalBalance : 0;
