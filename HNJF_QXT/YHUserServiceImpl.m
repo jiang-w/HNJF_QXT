@@ -6,11 +6,11 @@
 //  Copyright © 2016年 jiangw. All rights reserved.
 //
 
-#import "YHAccountServiceImpl.h"
+#import "YHUserServiceImpl.h"
 #import "RdServiceAPI.h"
 #import "NSError+RdServiceAPIResult.h"
 
-@implementation YHAccountServiceImpl
+@implementation YHUserServiceImpl
 
 - (RACSignal *)loginWithUserName:(NSString *)username password:(NSString *)password {
     return [[[[RdServiceAPI sharedInstance]

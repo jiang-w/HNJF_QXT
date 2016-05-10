@@ -39,7 +39,7 @@
                                  return nil;
                              }];
                              
-                             RACSignal *vCodeSignal = [self.services.accountService sendVerificationCodeForPhone:self.phoneNumber];
+                             RACSignal *vCodeSignal = [self.services.userService sendVerificationCodeForPhone:self.phoneNumber];
                              
                              return [[[RACSignal concat:@[validFormSignal, vCodeSignal]]
                                       materialize] takeUntil:self.rac_willDeallocSignal];
@@ -55,7 +55,7 @@
     
     self.submitCommand = [[RACCommand alloc]
                           initWithEnabled:validFormSignal signalBlock:^RACSignal *(id input) {
-                              return [[[self.services.accountService checkValidCodeWithPhoneNumber:self.phoneNumber andValidCode:self.vCode]
+                              return [[[self.services.userService checkValidCodeWithPhoneNumber:self.phoneNumber andValidCode:self.vCode]
                                        doCompleted:^{
                                            [self popViewModelAnimated:NO];
                                            [self pushViewModel:[[YHResetPasswordVM alloc] init] animated:YES];

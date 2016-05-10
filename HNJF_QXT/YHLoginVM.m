@@ -40,7 +40,7 @@
                          initWithEnabled:self.validLoginSignal
                          signalBlock:^RACSignal *(id input) {
                              @strongify(self)
-                             return [[[self.services.accountService loginWithUserName:self.username password:self.password] takeUntil:self.rac_willDeallocSignal]
+                             return [[[self.services.userService loginWithUserName:self.username password:self.password] takeUntil:self.rac_willDeallocSignal]
                                      doCompleted:^{
                                          [self dismissViewModelAnimated:NO completion:nil];
                                      }];

@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YHAccountService.h"
+#import "YHUserService.h"
 
-@interface YHAccountServiceImpl : NSObject <YHAccountService>
+@interface YHUserServiceImpl : NSObject <YHUserService>
 
 @end

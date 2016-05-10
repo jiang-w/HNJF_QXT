@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010245D91CAA282000EF9AC4 /* YHViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 010245D81CAA282000EF9AC4 /* YHViewModelServicesImpl.m */; };
-		010245DD1CAA29C000EF9AC4 /* YHAccountServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 010245DC1CAA29C000EF9AC4 /* YHAccountServiceImpl.m */; };
+		010245DD1CAA29C000EF9AC4 /* YHUserServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 010245DC1CAA29C000EF9AC4 /* YHUserServiceImpl.m */; };
 		0113FE521C98DFFE007F8A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0113FE511C98DFFE007F8A6D /* main.m */; };
 		0113FE551C98DFFE007F8A6D /* YHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0113FE541C98DFFE007F8A6D /* YHAppDelegate.m */; };
 		0113FE5D1C98DFFE007F8A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0113FE5C1C98DFFE007F8A6D /* Assets.xcassets */; };
@@ -22,6 +22,7 @@
 		01F7A7EC1CA97E5300AB05B8 /* YHLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F7A7EA1CA97E5300AB05B8 /* YHLoginVC.xib */; };
 		01F7A7EF1CA97F8E00AB05B8 /* YHLoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F7A7EE1CA97F8E00AB05B8 /* YHLoginVM.m */; };
 		83032E801CDF618400F70C17 /* YHColorDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 83032E7F1CDF618400F70C17 /* YHColorDot.m */; };
+		83032E831CE1903D00F70C17 /* YHAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83032E821CE1903D00F70C17 /* YHAccountInfo.m */; };
 		830B397A1CD838AC00C0123C /* UIColor+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B39791CD838AC00C0123C /* UIColor+Utility.m */; };
 		831D6D6F1CB7A72C001F0605 /* YHMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831D6D6E1CB7A72C001F0605 /* YHMainTabBarController.m */; };
 		831D6D721CB7A844001F0605 /* YHMainTabBarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 831D6D711CB7A844001F0605 /* YHMainTabBarViewModel.m */; };
@@ -95,9 +96,9 @@
 		010245D61CAA27F400EF9AC4 /* YHViewModelServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHViewModelServices.h; sourceTree = "<group>"; };
 		010245D71CAA282000EF9AC4 /* YHViewModelServicesImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHViewModelServicesImpl.h; sourceTree = "<group>"; };
 		010245D81CAA282000EF9AC4 /* YHViewModelServicesImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHViewModelServicesImpl.m; sourceTree = "<group>"; };
-		010245DA1CAA299900EF9AC4 /* YHAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHAccountService.h; sourceTree = "<group>"; };
-		010245DB1CAA29C000EF9AC4 /* YHAccountServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHAccountServiceImpl.h; sourceTree = "<group>"; };
-		010245DC1CAA29C000EF9AC4 /* YHAccountServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHAccountServiceImpl.m; sourceTree = "<group>"; };
+		010245DA1CAA299900EF9AC4 /* YHUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHUserService.h; sourceTree = "<group>"; };
+		010245DB1CAA29C000EF9AC4 /* YHUserServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHUserServiceImpl.h; sourceTree = "<group>"; };
+		010245DC1CAA29C000EF9AC4 /* YHUserServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHUserServiceImpl.m; sourceTree = "<group>"; };
 		0113FE4D1C98DFFE007F8A6D /* HNJF_QXT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HNJF_QXT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0113FE511C98DFFE007F8A6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0113FE531C98DFFE007F8A6D /* YHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +128,8 @@
 		1C783D977F03FB8CEF660B96 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		83032E7E1CDF618400F70C17 /* YHColorDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHColorDot.h; sourceTree = "<group>"; };
 		83032E7F1CDF618400F70C17 /* YHColorDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHColorDot.m; sourceTree = "<group>"; };
+		83032E811CE1903D00F70C17 /* YHAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHAccountInfo.h; sourceTree = "<group>"; };
+		83032E821CE1903D00F70C17 /* YHAccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHAccountInfo.m; sourceTree = "<group>"; };
 		830B39781CD838AC00C0123C /* UIColor+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utility.h"; sourceTree = "<group>"; };
 		830B39791CD838AC00C0123C /* UIColor+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utility.m"; sourceTree = "<group>"; };
 		831D6D6D1CB7A72C001F0605 /* YHMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHMainTabBarController.h; sourceTree = "<group>"; };
@@ -450,6 +453,8 @@
 				831D6DA51CBA60E2001F0605 /* YHInstanceType.h */,
 				831D6DA11CBA5E57001F0605 /* YHUserProfile.h */,
 				831D6DA21CBA5E57001F0605 /* YHUserProfile.m */,
+				83032E811CE1903D00F70C17 /* YHAccountInfo.h */,
+				83032E821CE1903D00F70C17 /* YHAccountInfo.m */,
 				834D40951CC762DF00A86E85 /* YHProductInfo.h */,
 				834D40961CC762DF00A86E85 /* YHProductInfo.m */,
 			);
@@ -463,9 +468,9 @@
 				83AD00711CBF4BD400858A96 /* RdServiceAPI.m */,
 				834D40741CC5D85A00A86E85 /* NSError+RdServiceAPIResult.h */,
 				834D40751CC5D85A00A86E85 /* NSError+RdServiceAPIResult.m */,
-				010245DA1CAA299900EF9AC4 /* YHAccountService.h */,
-				010245DB1CAA29C000EF9AC4 /* YHAccountServiceImpl.h */,
-				010245DC1CAA29C000EF9AC4 /* YHAccountServiceImpl.m */,
+				010245DA1CAA299900EF9AC4 /* YHUserService.h */,
+				010245DB1CAA29C000EF9AC4 /* YHUserServiceImpl.h */,
+				010245DC1CAA29C000EF9AC4 /* YHUserServiceImpl.m */,
 				834D408D1CC751B400A86E85 /* YHProductService.h */,
 				834D40911CC7528400A86E85 /* YHProductServiceImpl.h */,
 				834D40921CC7528400A86E85 /* YHProductServiceImpl.m */,
@@ -778,7 +783,7 @@
 				83F34B451CBF89500044BA5C /* NSDictionary+Output.m in Sources */,
 				832B8D631CD1148E00E7CA58 /* YHFundCellViewModel.m in Sources */,
 				835BF8791CD9DA31002B48B5 /* YHResetPasswordVC.m in Sources */,
-				010245DD1CAA29C000EF9AC4 /* YHAccountServiceImpl.m in Sources */,
+				010245DD1CAA29C000EF9AC4 /* YHUserServiceImpl.m in Sources */,
 				83032E801CDF618400F70C17 /* YHColorDot.m in Sources */,
 				834D40931CC7528400A86E85 /* YHProductServiceImpl.m in Sources */,
 				831D6D6F1CB7A72C001F0605 /* YHMainTabBarController.m in Sources */,
@@ -791,6 +796,7 @@
 				835D60821CC7CDE900E0AE04 /* YHImageHeaderFooterView.m in Sources */,
 				831D6D9B1CBA1495001F0605 /* YHPasswordManageViewModel.m in Sources */,
 				836A1C9E1CD5D7A500BEE025 /* YHHighMarginDetailSummary.m in Sources */,
+				83032E831CE1903D00F70C17 /* YHAccountInfo.m in Sources */,
 				831D6D8E1CB9F5D1001F0605 /* YHSettingViewController.m in Sources */,
 				835D60791CC7717200E0AE04 /* YHOnceProductTableCell.m in Sources */,
 				834D407F1CC7194100A86E85 /* UIViewController+Alert.m in Sources */,

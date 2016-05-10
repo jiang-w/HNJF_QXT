@@ -1,5 +1,5 @@
 //
-//  YHAccountService.h
+//  YHUserService.h
 //  HNJF_QXT
 //
 //  Created by 江伟 on 16/3/29.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol YHAccountService <NSObject>
+@protocol YHUserService <NSObject>
 
 // 登录
 - (RACSignal *)loginWithUserName:(NSString *)username password:(NSString *)password;

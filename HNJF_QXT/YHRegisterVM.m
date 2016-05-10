@@ -72,9 +72,9 @@
                                  return nil;
                              }];
                              
-                             RACSignal *validPhoneSignal = [self.services.accountService validPhoneNumber:self.phoneNumber];
+                             RACSignal *validPhoneSignal = [self.services.userService validPhoneNumber:self.phoneNumber];
                              
-                             RACSignal *vCodeSignal = [self.services.accountService sendVerificationCodeForPhone:self.phoneNumber];
+                             RACSignal *vCodeSignal = [self.services.userService sendVerificationCodeForPhone:self.phoneNumber];
                              
                              return [[[RACSignal concat:@[validFormSignal, validPhoneSignal, vCodeSignal]]
                                       materialize] takeUntil:self.rac_willDeallocSignal];
@@ -103,9 +103,9 @@
                                   return nil;
                               }];
                               
-                              RACSignal *registerSignal = [self.services.accountService registerUserWithPhoneNumber:self.phoneNumber andPassword:self.password];
+                              RACSignal *registerSignal = [self.services.userService registerUserWithPhoneNumber:self.phoneNumber andPassword:self.password];
                               
-                              RACSignal *loginSignal = [self.services.accountService loginWithUserName:self.phoneNumber password:self.password];
+                              RACSignal *loginSignal = [self.services.userService loginWithUserName:self.phoneNumber password:self.password];
                               
                               return [[[RACSignal concat:@[validFormSignal, registerSignal, loginSignal]]
                                        materialize] takeUntil:self.rac_willDeallocSignal];

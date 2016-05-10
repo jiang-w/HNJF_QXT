@@ -36,7 +36,7 @@
                              initWithEnabled:self.validInputSignal
                              signalBlock:^RACSignal *(id input) {
                                  @strongify(self)
-                                 return [[self.services.accountService changeLoginPassword:self.oldPassword withReplacePassword:self.replacePassword] doCompleted:^{
+                                 return [[self.services.userService changeLoginPassword:self.oldPassword withReplacePassword:self.replacePassword] doCompleted:^{
                                      [self popViewModelAnimated:NO];
                                  }];
                              }];
