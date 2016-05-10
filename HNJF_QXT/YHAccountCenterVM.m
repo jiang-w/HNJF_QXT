@@ -86,9 +86,9 @@
                     self.lastIncome        = [NSString stringFromNumber:@(accountInfo.lastIncome)
                                                               withStyle:NSNumberFormatterDecimalStyle];
                     
-                    self.availableRate  = accountInfo.availableBalance / accountInfo.totalBalance;
-                    self.blockedRate    = accountInfo.blockedBalance / accountInfo.totalBalance;
-                    self.receivableRate = accountInfo.receivableBalance / accountInfo.totalBalance;
+                    self.availableRate  = accountInfo.totalBalance != 0 ? accountInfo.availableBalance / accountInfo.totalBalance : 0;
+                    self.blockedRate    = accountInfo.totalBalance != 0 ? accountInfo.blockedBalance / accountInfo.totalBalance : 0;
+                    self.receivableRate = accountInfo.totalBalance != 0 ? accountInfo.receivableBalance / accountInfo.totalBalance : 0;
                 }];
     }];
 }

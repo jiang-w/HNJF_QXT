@@ -39,7 +39,7 @@
     self.colors   = [NSMutableArray arrayWithCapacity:0];
     self.circleLineWidth = 20;
     self.backgroundCircleLineWidth = 20;
-    self.backgroundStrokeColor = [UIColor whiteColor];
+    self.backgroundStrokeColor = circle_background_color;
     self.durationTime = 0.8;
     self.isAnimation = NO;
 }

@@ -26,5 +26,6 @@
 #define circle_percent_color_1      RGB(117, 184, 225)
 #define circle_percent_color_2      RGB(252, 123, 125)
 #define circle_percent_color_3      RGB(251, 178, 99)
+#define circle_background_color     RGB(239, 239, 244)
 
 #endif /* APPConfig_h */
