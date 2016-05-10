@@ -40,6 +40,8 @@
 #define RDAPI_Bond_List                   @"/app/bond/bondList.html"
 // 检查验证码
 #define RDAPI_User_CheckCode              @"/app/common/checkCode.html"
+// 账户资金信息
+#define RDAPI_Account_Basic               @"/app/user/accountInfo.html"
 
 // respose code
 #define kRdServiceNetworkingFailure       -1

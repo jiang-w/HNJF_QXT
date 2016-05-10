@@ -33,12 +33,6 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    [self strokeCircle];
-}
-
 - (void)setDefaultParameters {
     self.layerArr = [NSMutableArray arrayWithCapacity:0];
     self.numbers  = [NSMutableArray arrayWithCapacity:0];
@@ -127,7 +121,7 @@
 }
 
 - (void)startPercentCircleAnimation {
-    [self setNeedsLayout];
+    [self strokeCircle];
 }
 
 @end

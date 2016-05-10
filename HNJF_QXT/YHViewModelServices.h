@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "YHUserService.h"
 #import "YHProductService.h"
+#import "YHAccountService.h"
 
 @protocol YHViewModelServices <NSObject>
 
 @property (nonatomic, strong, readonly) id<YHUserService> userService;
 @property (nonatomic, strong, readonly) id<YHProductService> productService;
+@property (nonatomic, strong, readonly) id<YHAccountService> accountService;
 
 @end

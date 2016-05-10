@@ -7,12 +7,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YHAccountCenterVC">
             <connections>
+                <outlet property="availableBalanceLabel" destination="YN8-0g-q0Z" id="lhU-Ui-QGm"/>
+                <outlet property="blockedBalanceLabel" destination="WHf-qC-8r8" id="cZv-nd-fjK"/>
                 <outlet property="colorDot1" destination="xzB-yi-n7m" id="JR3-3Y-4eb"/>
                 <outlet property="colorDot2" destination="upe-cS-tbv" id="ehY-UR-NzG"/>
                 <outlet property="colorDot3" destination="2sq-GR-uAH" id="zGA-aM-NL9"/>
+                <outlet property="lastIncomeLabel" destination="wo8-HP-JyY" id="zjT-A2-ag4"/>
                 <outlet property="percentCircle" destination="Rzb-RF-aQI" id="qhc-wL-DJR"/>
+                <outlet property="receivableBalanceLabel" destination="7Ob-RG-4bv" id="Bed-r0-bnM"/>
                 <outlet property="rechargeButton" destination="QyW-vL-2Uw" id="6Wg-3a-ZZV"/>
                 <outlet property="settingButton" destination="Q2C-e3-vWT" id="MMr-nb-MZi"/>
+                <outlet property="totalBalanceLabel" destination="M0Z-ID-8Zy" id="PmV-0g-1Yd"/>
+                <outlet property="totalIncomeLabel" destination="Fgi-4Y-tFn" id="O8c-w1-r3C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="withdrawButton" destination="pq7-bZ-thY" id="cvJ-lm-9UP"/>
             </connections>

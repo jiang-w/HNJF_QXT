@@ -23,8 +23,8 @@
 #define tabbar_normal_color         RGB(153, 153, 153)
 #define button_bg_color_1           RGB(247, 142, 58)
 #define button_bg_color_2           RGB(254, 202, 158)
-#define circle_percent_color_1      RGB(251, 178, 99)
+#define circle_percent_color_1      RGB(117, 184, 225)
 #define circle_percent_color_2      RGB(252, 123, 125)
-#define circle_percent_color_3      RGB(117, 184, 225)
+#define circle_percent_color_3      RGB(251, 178, 99)
 
 #endif /* APPConfig_h */

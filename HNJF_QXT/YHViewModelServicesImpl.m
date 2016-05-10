@@ -9,11 +9,13 @@
 #import "YHViewModelServicesImpl.h"
 #import "YHUserServiceImpl.h"
 #import "YHProductServiceImpl.h"
+#import "YHAccountServiceImpl.h"
 
 @implementation YHViewModelServicesImpl
 
-@synthesize userService = _accountService;
+@synthesize userService = _userService;
 @synthesize productService = _productService;
+@synthesize accountService = _accountService;
 
 + (instancetype)sharedInstance {
     static YHViewModelServicesImpl *instance = nil;
@@ -26,8 +28,9 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _accountService = [[YHUserServiceImpl alloc] init];
+        _userService = [[YHUserServiceImpl alloc] init];
         _productService = [[YHProductServiceImpl alloc] init];
+        _accountService = [[YHAccountServiceImpl alloc] init];
     }
     return self;
 }
