@@ -9,7 +9,7 @@
 #ifndef YHInstanceType_h
 #define YHInstanceType_h
 
-#import "YHUserProfile.h"
+#import "YHUserInfo.h"
 #import "YHProductInfo.h"
 #import "YHAccountInfo.h"
 

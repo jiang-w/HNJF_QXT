@@ -17,14 +17,14 @@
               signalWithServiceAPI:RDAPI_User_DoLogin
               Parameters:@{@"userName": username, @"pwd": password}]
              map:^id(NSDictionary *dict) {
-                 YHUserProfile *user = [YHUserProfile currentUser];
+                 YHUserInfo *user = [YHUserInfo currentUser];
                  user.identity = dict[@"userId"];
                  user.loginName = username;
                  user.nickName = dict[@"userName"];
                  user.accessToken = dict[@"oauth_token"];
                  return user;
              }]
-            flattenMap:^RACStream *(YHUserProfile *user) {
+            flattenMap:^RACStream *(YHUserInfo *user) {
                 return [[[RdServiceAPI sharedInstance]
                          signalWithServiceAPI:RDAPI_Account_Basic
                          Parameters:@{@"userId": user.identity, @"oauth_token": user.accessToken}]
@@ -41,14 +41,21 @@
 }
 
 - (void)logout {
-    YHUserProfile *user = [YHUserProfile currentUser];
-    user.identity = nil;
-    user.loginName = nil;
-    user.nickName = nil;
+    YHUserInfo *user = [YHUserInfo currentUser];
+    user.identity    = nil;
+    user.loginName   = nil;
+    user.nickName    = nil;
     user.accessToken = nil;
     user.phoneNumber = nil;
-    user.eMail = nil;
-    user.name = nil;
+    user.eMail       = nil;
+    user.name        = nil;
+    
+    user.account.totalBalance      = 0;
+    user.account.availableBalance  = 0;
+    user.account.blockedBalance    = 0;
+    user.account.receivableBalance = 0;
+    user.account.lastIncome        = 0;
+    user.account.totalIncome       = 0;
 }
 
 - (RACSignal *)validPhoneNumber:(NSString *)phone {
@@ -135,5 +142,9 @@
                 return responseData;
             }];
 }
+
+
+
+
 
 @end

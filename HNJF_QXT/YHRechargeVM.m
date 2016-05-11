@@ -8,6 +8,12 @@
 
 #import "YHRechargeVM.h"
 
+@interface YHRechargeVM ()
+
+@property (nonatomic, strong, readwrite) RACCommand *payCommand;
+
+@end
+
 @implementation YHRechargeVM
 
 - (void)initialize {
@@ -15,6 +21,11 @@
     
     self.title = @"充值";
     self.requireToken = YES;
+    
+    self.payCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        double amount = [self.payment doubleValue];
+        return [self.services.accountService signalForRechargeWithBankNo:self.bankCardNumber Amount:amount PayPassword:self.payPassword];
+    }];
 }
 
 @end

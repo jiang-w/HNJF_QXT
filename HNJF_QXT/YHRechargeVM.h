@@ -10,4 +10,9 @@
 
 @interface YHRechargeVM : YHViewModel
 
+@property (nonatomic, copy) NSString *bankCardNumber;
+@property (nonatomic, copy) NSString *payPassword;
+@property (nonatomic, copy) NSString *payment;
+@property (nonatomic, strong, readonly) RACCommand *payCommand;
+
 @end

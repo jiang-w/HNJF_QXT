@@ -30,8 +30,8 @@
 - (void)setPercentNumberArray:(NSArray *)numberArray colorArray:(NSArray *)colorArray animated:(BOOL)animated;
 
 /**
- *  开始执行动画
+ *  开始绘制
  */
-- (void)startPercentCircleAnimation;
+- (void)startStrokePercentCircle;
 
 @end

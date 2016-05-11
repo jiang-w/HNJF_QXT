@@ -42,6 +42,8 @@
 #define RDAPI_User_CheckCode              @"/app/common/checkCode.html"
 // 账户资金信息
 #define RDAPI_Account_Basic               @"/app/user/accountInfo.html"
+// 充值
+#define RDAPI_Account_DoRecharge          @"/app/user/dorecharge.html"
 
 // respose code
 #define kRdServiceNetworkingFailure       -1

@@ -120,7 +120,7 @@
     self.isAnimation = animated;
 }
 
-- (void)startPercentCircleAnimation {
+- (void)startStrokePercentCircle {
     [self strokeCircle];
 }
 

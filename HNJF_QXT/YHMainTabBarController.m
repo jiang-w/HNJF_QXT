@@ -83,7 +83,7 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     YHViewController *viewContr = (YHViewController *)viewController;
     if (viewContr && viewContr.viewModel.requireToken) {
-        if (![YHUserProfile currentUser].identity) {
+        if (![YHUserInfo currentUser].identity) {
             [self.viewModel presentViewModel:[[YHLoginVM alloc] init] animated:YES completion:nil];
             return NO;
         }

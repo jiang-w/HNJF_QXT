@@ -54,7 +54,7 @@
     
     self.rechargeButton.rac_command = self.viewModel.rechargeCommand;
     self.withdrawButton.rac_command = self.viewModel.withdrawCommand;
-    self.settingButton.rac_command = self.viewModel.settingCommand;
+    self.settingButton.rac_command  = self.viewModel.settingCommand;
     
     @weakify(self)
     [[RACSignal zip:@[RACObserve(self.viewModel, availableRate),
@@ -67,12 +67,13 @@
                                                      circle_percent_color_2,
                                                      circle_percent_color_3]
                                           animated:YES];
-         [self.percentCircle startPercentCircleAnimation];
+         [self.percentCircle startStrokePercentCircle];
      }];
     
-    [[self rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
-        [self.viewModel.updateAccountCommand execute:nil];
-    }];
+    [[self rac_signalForSelector:@selector(viewWillAppear:)]
+     subscribeNext:^(id x) {
+         [self.viewModel.updateAccountCommand execute:nil];
+     }];
 }
 
 @end

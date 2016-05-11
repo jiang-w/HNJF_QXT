@@ -33,7 +33,7 @@
     
     self.logoutCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self)
-        [YHUserProfile setCurrentUser:nil];
+        [self.services.userService logout];
         [self popToRootViewModelAnimated:NO];
         return [RACSignal empty];
     }];

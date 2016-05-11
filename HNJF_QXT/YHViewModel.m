@@ -33,7 +33,7 @@
 
 - (void)pushViewModel:(YHViewModel *)viewModel animated:(BOOL)animated {
     if (viewModel.requireToken) {
-        if (![YHUserProfile currentUser].identity) {
+        if (![YHUserInfo currentUser].identity) {
             YHLoginVM *loginViewModel = [[YHLoginVM alloc] init];
             [self presentViewModel:loginViewModel animated:YES completion:nil];
             return;

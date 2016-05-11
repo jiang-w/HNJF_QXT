@@ -12,4 +12,9 @@
 
 - (void)updateAccountInfoWithUserIdentity:(NSString *)userId;
 
+- (RACSignal *)signalForRechargeWithBankNo:(NSString *)bankNo Amount:(double)amount PayPassword:(NSString *)payPassword;
+
+
+- (RACSignal *)currentAccountSignal;
+
 @end

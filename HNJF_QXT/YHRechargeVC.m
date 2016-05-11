@@ -11,6 +11,8 @@
 
 @interface YHRechargeVC ()
 
+@property (weak, nonatomic) IBOutlet UITextField *paymentTextField;
+@property (weak, nonatomic) IBOutlet UITextField *payPasswordTextField;
 @property (nonatomic, strong) YHRechargeVM *viewModel;
 
 @end
@@ -27,7 +29,8 @@
 - (void)bindViewModel {
     [super bindViewModel];
     
-    
+    RAC(self.viewModel, payment) = self.paymentTextField.rac_textSignal;
+    RAC(self.viewModel, payPassword) = self.payPasswordTextField.rac_textSignal;
 }
 
 @end
