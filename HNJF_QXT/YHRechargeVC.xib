@@ -6,8 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YHRechargeVC">
             <connections>
+                <outlet property="availableBalanceLabel" destination="Vdo-Y4-ohy" id="kH1-lU-6vd"/>
+                <outlet property="payButton" destination="mM5-CD-fmT" id="kUF-nl-9IT"/>
                 <outlet property="payPasswordTextField" destination="v4V-KK-q7t" id="qxb-XH-roe"/>
                 <outlet property="paymentTextField" destination="6iE-q2-V4G" id="MCN-d5-yuR"/>
+                <outlet property="totalBalanceLabel" destination="6qm-iM-984" id="0y3-pN-zoW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

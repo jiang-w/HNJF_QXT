@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString *bankCardNumber;
 @property (nonatomic, copy) NSString *payPassword;
 @property (nonatomic, copy) NSString *payment;
+@property (nonatomic, strong, readonly) NSString *availableBalance;
+@property (nonatomic, strong, readonly) NSString *totalBalance;
 @property (nonatomic, strong, readonly) RACCommand *payCommand;
 
 @end

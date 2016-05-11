@@ -18,11 +18,11 @@
 @property (nonatomic, strong, readwrite) NSString   *availableBalance;//可用金额
 @property (nonatomic, strong, readwrite) NSString   *blockedBalance;//冻结金额
 @property (nonatomic, strong, readwrite) NSString   *receivableBalance;//应收金额
+@property (nonatomic, strong, readwrite) NSString   *totalIncome;//累计收入
+@property (nonatomic, strong, readwrite) NSString   *lastIncome;//昨日收益
 @property (nonatomic, assign, readwrite) double     availableRate;
 @property (nonatomic, assign, readwrite) double     blockedRate;
 @property (nonatomic, assign, readwrite) double     receivableRate;
-@property (nonatomic, strong, readwrite) NSString   *totalIncome;//累计收入
-@property (nonatomic, strong, readwrite) NSString   *lastIncome;//昨日收益
 @property (nonatomic, strong, readwrite) RACCommand *rechargeCommand;
 @property (nonatomic, strong, readwrite) RACCommand *withdrawCommand;
 @property (nonatomic, strong, readwrite) RACCommand *settingCommand;
@@ -68,9 +68,9 @@
                     self.receivableBalance = [NSString currencyStyleStringFromNumber:@(account.receivableBalance)];
                     self.lastIncome        = [NSString currencyStyleStringFromNumber:@(account.lastIncome)];
                     self.totalIncome       = [NSString currencyStyleStringFromNumber:@(account.totalIncome)];
-                    self.availableRate  = account.totalBalance != 0 ? account.availableBalance / account.totalBalance : 0;
-                    self.blockedRate    = account.totalBalance != 0 ? account.blockedBalance / account.totalBalance : 0;
-                    self.receivableRate = account.totalBalance != 0 ? account.receivableBalance / account.totalBalance : 0;
+                    self.availableRate     = account.totalBalance != 0 ? account.availableBalance / account.totalBalance : 0;
+                    self.blockedRate       = account.totalBalance != 0 ? account.blockedBalance / account.totalBalance : 0;
+                    self.receivableRate    = account.totalBalance != 0 ? account.receivableBalance / account.totalBalance : 0;
                 }];
     }];
 }

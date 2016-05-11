@@ -10,6 +10,8 @@
 
 @interface YHRechargeVM ()
 
+@property (nonatomic, strong, readwrite) NSString *availableBalance;
+@property (nonatomic, strong, readwrite) NSString *totalBalance;
 @property (nonatomic, strong, readwrite) RACCommand *payCommand;
 
 @end
@@ -24,7 +26,7 @@
     
     self.payCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         double amount = [self.payment doubleValue];
-        return [self.services.accountService signalForRechargeWithBankNo:self.bankCardNumber Amount:amount PayPassword:self.payPassword];
+        return [self.services.accountService rechargeSignalWithBankCardNumber:self.bankCardNumber Password:self.payPassword Amount:amount];
     }];
 }
 

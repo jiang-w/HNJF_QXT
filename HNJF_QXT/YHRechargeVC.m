@@ -13,6 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *paymentTextField;
 @property (weak, nonatomic) IBOutlet UITextField *payPasswordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *availableBalanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalBalanceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *payButton;
+@property (nonatomic, copy) NSString *bankCardNumber;
 @property (nonatomic, strong) YHRechargeVM *viewModel;
 
 @end
@@ -31,6 +35,8 @@
     
     RAC(self.viewModel, payment) = self.paymentTextField.rac_textSignal;
     RAC(self.viewModel, payPassword) = self.payPasswordTextField.rac_textSignal;
+    RAC(self.viewModel, bankCardNumber) = RACObserve(self, bankCardNumber);
+    self.payButton.rac_command = self.viewModel.payCommand;
 }
 
 @end

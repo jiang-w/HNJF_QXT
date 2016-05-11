@@ -10,11 +10,8 @@
 
 @protocol YHAccountService <NSObject>
 
-- (void)updateAccountInfoWithUserIdentity:(NSString *)userId;
-
-- (RACSignal *)signalForRechargeWithBankNo:(NSString *)bankNo Amount:(double)amount PayPassword:(NSString *)payPassword;
-
-
 - (RACSignal *)currentAccountSignal;
+
+- (RACSignal *)rechargeSignalWithBankCardNumber:(NSString *)cardNumber Password:(NSString *)password Amount:(double)amount;
 
 @end
