@@ -8,11 +8,15 @@
 
 #import "YHUserProfile.h"
 
-static YHUserProfile *currtUser;
+static YHUserProfile *currtUser = nil;
 
 @implementation YHUserProfile
 
 + (YHUserProfile *)currentUser {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        currtUser = [[self alloc] init];
+    });
     return currtUser;
 }
 

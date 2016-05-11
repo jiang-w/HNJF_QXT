@@ -22,6 +22,6 @@
 @property (nonatomic, strong, readonly) RACCommand *rechargeCommand;
 @property (nonatomic, strong, readonly) RACCommand *withdrawCommand;
 @property (nonatomic, strong, readonly) RACCommand *settingCommand;
-@property (nonatomic, strong, readonly) RACCommand *fetchDataCommand;
+@property (nonatomic, strong, readonly) RACCommand *updateAccountCommand;
 
 @end

@@ -26,7 +26,7 @@
 @property (nonatomic, strong, readwrite) RACCommand *rechargeCommand;
 @property (nonatomic, strong, readwrite) RACCommand *withdrawCommand;
 @property (nonatomic, strong, readwrite) RACCommand *settingCommand;
-@property (nonatomic, strong, readwrite) RACCommand *fetchDataCommand;
+@property (nonatomic, strong, readwrite) RACCommand *updateAccountCommand;
 
 @end
 
@@ -39,6 +39,51 @@
     self.requireToken = YES;
     
     @weakify(self)
+    YHAccountInfo *account = [YHUserProfile currentUser].account;
+    RAC(self, totalBalance, @"0.00") = [[RACObserve(account, totalBalance) distinctUntilChanged]
+                                        map:^id(id value) {
+                                            return [NSString currencyStyleStringFromNumber:value];
+                                        }];
+    
+    RAC(self, availableBalance, @"0.00") = [[RACObserve(account, availableBalance) distinctUntilChanged]
+                                            map:^id(id value) {
+                                                return [NSString currencyStyleStringFromNumber:value];
+                                            }];
+    
+    RAC(self, blockedBalance, @"0.00") = [[RACObserve(account, blockedBalance) distinctUntilChanged]
+                                          map:^id(id value) {
+                                              return [NSString currencyStyleStringFromNumber:value];
+                                          }];
+    
+    RAC(self, receivableBalance, @"0.00") = [[RACObserve(account, receivableBalance) distinctUntilChanged]
+                                             map:^id(id value) {
+                                                 return [NSString currencyStyleStringFromNumber:value];
+                                             }];
+    
+    RAC(self, totalIncome, @"0.00") = [[RACObserve(account, totalIncome) distinctUntilChanged]
+                                       map:^id(id value) {
+                                           return [NSString currencyStyleStringFromNumber:value];
+                                       }];
+    
+    RAC(self, lastIncome, @"0.00") = [[RACObserve(account, lastIncome) distinctUntilChanged]
+                                      map:^id(id value) {
+                                          return [NSString currencyStyleStringFromNumber:value];
+                                      }];
+    
+    [[RACSignal zip:@[[RACObserve(account, availableBalance) distinctUntilChanged],
+                      [RACObserve(account, blockedBalance) distinctUntilChanged],
+                      [RACObserve(account, receivableBalance) distinctUntilChanged],
+                      [RACObserve(account, totalBalance) distinctUntilChanged]]]
+     subscribeNext:^(RACTuple *tuple) {
+         @strongify(self)
+         double total = [tuple.fourth doubleValue];
+         if (total != 0) {
+             self.availableRate  = [tuple.first doubleValue] / total;
+             self.blockedRate    = [tuple.second doubleValue] / total;
+             self.receivableRate = [tuple.third doubleValue] / total;
+         }
+     }];
+    
     self.rechargeCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self)
         [self pushViewModel:[[YHRechargeVM alloc] init] animated:YES];
@@ -57,33 +102,11 @@
         return [RACSignal empty];
     }];
     
-    self.fetchDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    self.updateAccountCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self)
         YHUserProfile *user = [YHUserProfile currentUser];
-        return [[[self.services.accountService signalOfAccountInfoWithUserIdentity:user.identity]
-                 map:^id(NSDictionary *dict) {
-                     YHAccountInfo *accountInfo    = [[YHAccountInfo alloc] init];
-                     accountInfo.totalBalance      = [dict[@"model"][@"total"] doubleValue];
-                     accountInfo.availableBalance  = [dict[@"model"][@"useMoney"] doubleValue];
-                     accountInfo.blockedBalance    = [dict[@"model"][@"noUseMoney"] doubleValue];
-                     accountInfo.receivableBalance = [dict[@"model"][@"newEstcollectMoney"] doubleValue];
-                     accountInfo.totalIncome       = [dict[@"model"][@"earnAmount"] doubleValue];
-                     accountInfo.lastIncome        = [dict[@"model"][@"todayEarnAmount"] doubleValue];
-                     return accountInfo;
-                 }]
-                doNext:^(YHAccountInfo *accountInfo) {
-                    @strongify(self)
-                    self.totalBalance      = [NSString currencyStyleStringFromNumber:@(accountInfo.totalBalance)];
-                    self.availableBalance  = [NSString currencyStyleStringFromNumber:@(accountInfo.availableBalance)];
-                    self.blockedBalance    = [NSString currencyStyleStringFromNumber:@(accountInfo.blockedBalance)];
-                    self.receivableBalance = [NSString currencyStyleStringFromNumber:@(accountInfo.receivableBalance)];
-                    self.totalIncome       = [NSString currencyStyleStringFromNumber:@(accountInfo.totalIncome)];
-                    self.lastIncome        = [NSString currencyStyleStringFromNumber:@(accountInfo.lastIncome)];
-                    
-                    self.availableRate  = accountInfo.totalBalance != 0 ? accountInfo.availableBalance / accountInfo.totalBalance : 0;
-                    self.blockedRate    = accountInfo.totalBalance != 0 ? accountInfo.blockedBalance / accountInfo.totalBalance : 0;
-                    self.receivableRate = accountInfo.totalBalance != 0 ? accountInfo.receivableBalance / accountInfo.totalBalance : 0;
-                }];
+        [self.services.accountService updateAccountInfoWithUserIdentity:user.identity];
+        return [RACSignal empty];
     }];
 }
 

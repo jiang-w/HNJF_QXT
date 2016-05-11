@@ -148,10 +148,13 @@
         [dic setObject:[self sginaWithTimeStamp:dic[@"ts"]] forKey:@"signa"];
     }
     
-    if ([YHUserProfile currentUser]) {
+    if ([YHUserProfile currentUser].identity) {
         [dic setObject:[YHUserProfile currentUser].identity forKey:@"userId"];
+    }
+    if ([YHUserProfile currentUser].accessToken) {
         [dic setObject:[YHUserProfile currentUser].accessToken forKey:@"oauth_token"];
     }
+    
     return dic;
 }
 

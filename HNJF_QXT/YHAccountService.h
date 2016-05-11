@@ -10,6 +10,6 @@
 
 @protocol YHAccountService <NSObject>
 
-- (RACSignal *)signalOfAccountInfoWithUserIdentity:(NSString *)userId;
+- (void)updateAccountInfoWithUserIdentity:(NSString *)userId;
 
 @end

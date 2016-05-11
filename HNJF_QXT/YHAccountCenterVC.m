@@ -36,8 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 
     [self.colorDot1 updateWithColor:circle_percent_color_1];
     [self.colorDot2 updateWithColor:circle_percent_color_2];
@@ -72,7 +70,9 @@
          [self.percentCircle startPercentCircleAnimation];
      }];
     
-    [self.viewModel.fetchDataCommand execute:nil];
+    [[self rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
+        [self.viewModel.updateAccountCommand execute:nil];
+    }];
 }
 
 @end

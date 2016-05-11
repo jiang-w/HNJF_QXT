@@ -17,33 +17,38 @@
               signalWithServiceAPI:RDAPI_User_DoLogin
               Parameters:@{@"userName": username, @"pwd": password}]
              map:^id(NSDictionary *dict) {
-                 YHUserProfile *userInfo = [[YHUserProfile alloc] init];
-                 userInfo = [[YHUserProfile alloc] init];
-                 userInfo.identity = dict[@"userId"];
-                 userInfo.loginName = username;
-                 userInfo.nickName = dict[@"userName"];
-                 userInfo.accessToken = dict[@"oauth_token"];
-                 return userInfo;
+                 YHUserProfile *user = [YHUserProfile currentUser];
+                 user.identity = dict[@"userId"];
+                 user.loginName = username;
+                 user.nickName = dict[@"userName"];
+                 user.accessToken = dict[@"oauth_token"];
+                 return user;
              }]
-            flattenMap:^RACStream *(YHUserProfile *userInfo) {
+            flattenMap:^RACStream *(YHUserProfile *user) {
                 return [[[RdServiceAPI sharedInstance]
                          signalWithServiceAPI:RDAPI_Account_Basic
-                         Parameters:@{@"userId": userInfo.identity, @"oauth_token": userInfo.accessToken}]
+                         Parameters:@{@"userId": user.identity, @"oauth_token": user.accessToken}]
                         map:^id(NSDictionary *dict) {
-                            userInfo.phoneNumber = dict[@"userIdentify"][@"phone"];
-                            userInfo.eMail = dict[@"userIdentify"][@"email"];
-                            userInfo.name = dict[@"userIdentify"][@"realName"];
+                            user.phoneNumber = dict[@"userIdentify"][@"phone"];
+                            user.eMail = dict[@"userIdentify"][@"email"];
+                            user.name = dict[@"userIdentify"][@"realName"];
                             
-                            [YHUserProfile setCurrentUser:userInfo];
-                            [[NSUserDefaults standardUserDefaults] setObject:userInfo.loginName forKey:@"loginName"];
+                            [[NSUserDefaults standardUserDefaults] setObject:user.loginName forKey:@"loginName"];
                             
-                            return userInfo;
+                            return user;
                         }];
             }];
 }
 
 - (void)logout {
-    [YHUserProfile setCurrentUser:nil];
+    YHUserProfile *user = [YHUserProfile currentUser];
+    user.identity = nil;
+    user.loginName = nil;
+    user.nickName = nil;
+    user.accessToken = nil;
+    user.phoneNumber = nil;
+    user.eMail = nil;
+    user.name = nil;
 }
 
 - (RACSignal *)validPhoneNumber:(NSString *)phone {

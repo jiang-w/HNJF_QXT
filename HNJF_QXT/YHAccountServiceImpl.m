@@ -12,10 +12,19 @@
 
 @implementation YHAccountServiceImpl
 
-- (RACSignal *)signalOfAccountInfoWithUserIdentity:(NSString *)userId {
-    return [[RdServiceAPI sharedInstance]
-            signalWithServiceAPI:RDAPI_Account_Basic
-            Parameters:@{@"userId": userId}];
+- (void)updateAccountInfoWithUserIdentity:(NSString *)userId {
+    [[[RdServiceAPI sharedInstance]
+      signalWithServiceAPI:RDAPI_Account_Basic
+      Parameters:@{@"userId": userId}]
+     subscribeNext:^(NSDictionary *dict) {
+         YHAccountInfo *account    = [YHUserProfile currentUser].account;
+         account.totalBalance      = [dict[@"model"][@"total"] doubleValue];
+         account.availableBalance  = [dict[@"model"][@"useMoney"] doubleValue];
+         account.blockedBalance    = [dict[@"model"][@"noUseMoney"] doubleValue];
+         account.receivableBalance = [dict[@"model"][@"newEstcollectMoney"] doubleValue];
+         account.totalIncome       = [dict[@"model"][@"earnAmount"] doubleValue];
+         account.lastIncome        = [dict[@"model"][@"todayEarnAmount"] doubleValue];
+     }];
 }
 
 @end
