@@ -68,11 +68,9 @@
                     self.receivableBalance = [NSString currencyStyleStringFromNumber:@(account.receivableBalance)];
                     self.lastIncome        = [NSString currencyStyleStringFromNumber:@(account.lastIncome)];
                     self.totalIncome       = [NSString currencyStyleStringFromNumber:@(account.totalIncome)];
-                    if (account.totalBalance != 0) {
-                        self.availableRate  = account.availableBalance / account.totalBalance;
-                        self.blockedRate    = account.blockedBalance / account.totalBalance;
-                        self.receivableRate = account.receivableBalance / account.totalBalance;
-                    }
+                    self.availableRate  = account.totalBalance != 0 ? account.availableBalance / account.totalBalance : 0;
+                    self.blockedRate    = account.totalBalance != 0 ? account.blockedBalance / account.totalBalance : 0;
+                    self.receivableRate = account.totalBalance != 0 ? account.receivableBalance / account.totalBalance : 0;
                 }];
     }];
 }
