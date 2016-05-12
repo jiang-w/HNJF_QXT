@@ -10,7 +10,7 @@
                 <outlet property="payButton" destination="mM5-CD-fmT" id="kUF-nl-9IT"/>
                 <outlet property="payPasswordTextField" destination="v4V-KK-q7t" id="qxb-XH-roe"/>
                 <outlet property="paymentTextField" destination="6iE-q2-V4G" id="MCN-d5-yuR"/>
-                <outlet property="totalBalanceLabel" destination="6qm-iM-984" id="0y3-pN-zoW"/>
+                <outlet property="resultBalanceLabel" destination="6qm-iM-984" id="G8N-re-Uzg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -187,7 +187,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mM5-CD-fmT">
-                    <rect key="frame" x="20" y="398" width="335" height="48"/>
+                    <rect key="frame" x="20" y="388" width="335" height="48"/>
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="Iqx-i7-QSs"/>
@@ -221,7 +221,7 @@
                 <constraint firstAttribute="trailing" secondItem="mM5-CD-fmT" secondAttribute="trailing" constant="20" id="iJz-6X-Zj8"/>
                 <constraint firstItem="dYm-iu-2Fk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="j0u-FT-F3b"/>
                 <constraint firstItem="CCt-K5-2K2" firstAttribute="top" secondItem="yWA-oY-DJF" secondAttribute="bottom" constant="20" id="jIf-yG-eKj"/>
-                <constraint firstItem="mM5-CD-fmT" firstAttribute="top" secondItem="j0h-3v-QmY" secondAttribute="bottom" constant="40" id="nHs-qp-CPy"/>
+                <constraint firstItem="mM5-CD-fmT" firstAttribute="top" secondItem="j0h-3v-QmY" secondAttribute="bottom" constant="30" id="nHs-qp-CPy"/>
                 <constraint firstItem="CgF-FJ-fBS" firstAttribute="top" secondItem="CCt-K5-2K2" secondAttribute="bottom" constant="16" id="o9n-rG-wsP"/>
                 <constraint firstAttribute="trailing" secondItem="yWA-oY-DJF" secondAttribute="trailing" id="oHz-MO-9xQ"/>
                 <constraint firstItem="6qm-iM-984" firstAttribute="baseline" secondItem="CgF-FJ-fBS" secondAttribute="baseline" id="qTb-QU-Bh1"/>
