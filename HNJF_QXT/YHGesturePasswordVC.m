@@ -38,4 +38,8 @@
     [super bindViewModel];
 }
 
+- (void)gestureLockView:(KKGestureLockView *)gestureLockView didEndWithPasscode:(NSString *)passcode {
+    NSLog(@"%@", passcode);
+}
+
 @end
