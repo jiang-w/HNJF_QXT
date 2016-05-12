@@ -10,4 +10,6 @@
 
 @interface YHGesturePasswordVM : YHViewModel
 
+@property (nonatomic, strong, readonly) RACCommand *validGesturePasswordCommand;
+
 @end

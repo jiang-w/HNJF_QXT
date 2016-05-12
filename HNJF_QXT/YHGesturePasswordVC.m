@@ -7,16 +7,20 @@
 //
 
 #import "YHGesturePasswordVC.h"
+#import "YHGesturePasswordVM.h"
 
 @interface YHGesturePasswordVC ()
 
 @property (weak, nonatomic) IBOutlet KKGestureLockView *gestureLockView;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginAgainButton;
+@property (nonatomic, strong) YHGesturePasswordVM *viewModel;
 
 @end
 
 @implementation YHGesturePasswordVC
+
+@dynamic viewModel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +43,7 @@
 }
 
 - (void)gestureLockView:(KKGestureLockView *)gestureLockView didEndWithPasscode:(NSString *)passcode {
-    NSLog(@"%@", passcode);
+    [self.viewModel.validGesturePasswordCommand execute:passcode];
 }
 
 @end
