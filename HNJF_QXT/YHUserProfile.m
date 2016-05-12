@@ -10,4 +10,11 @@
 
 @implementation YHUserProfile
 
++ (instancetype)defaultProfile {
+    YHUserProfile *profile = [self init];
+    profile.allowGesturePassword = NO;
+    profile.allowTouchId = NO;
+    return profile;
+}
+
 @end

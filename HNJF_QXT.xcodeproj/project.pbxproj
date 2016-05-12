@@ -88,6 +88,9 @@
 		836F93E81CC918390088571E /* YHHighMarginProductListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 836F93E71CC918390088571E /* YHHighMarginProductListVC.m */; };
 		836F93EC1CC91A2B0088571E /* YHHighMarginProductListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 836F93EB1CC91A2B0088571E /* YHHighMarginProductListVM.m */; };
 		836F93EF1CC9296C0088571E /* YHHighMarginProductCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 836F93EE1CC9296C0088571E /* YHHighMarginProductCellVM.m */; };
+		83A691F31CE46C400065D0EA /* YHGesturePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A691F11CE46C400065D0EA /* YHGesturePasswordVC.m */; };
+		83A691F41CE46C400065D0EA /* YHGesturePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A691F21CE46C400065D0EA /* YHGesturePasswordVC.xib */; };
+		83A691F71CE473200065D0EA /* YHGesturePasswordVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A691F61CE473200065D0EA /* YHGesturePasswordVM.m */; };
 		83AD00721CBF4BD400858A96 /* RdServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AD00711CBF4BD400858A96 /* RdServiceAPI.m */; };
 		83F165891CBF6C5C000FADCB /* NSString+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F165881CBF6C5C000FADCB /* NSString+Utility.m */; };
 		83F34B451CBF89500044BA5C /* NSDictionary+Output.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F34B441CBF89500044BA5C /* NSDictionary+Output.m */; };
@@ -250,6 +253,11 @@
 		836F93EB1CC91A2B0088571E /* YHHighMarginProductListVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHHighMarginProductListVM.m; sourceTree = "<group>"; };
 		836F93ED1CC9296C0088571E /* YHHighMarginProductCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHHighMarginProductCellVM.h; sourceTree = "<group>"; };
 		836F93EE1CC9296C0088571E /* YHHighMarginProductCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHHighMarginProductCellVM.m; sourceTree = "<group>"; };
+		83A691F01CE46C400065D0EA /* YHGesturePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGesturePasswordVC.h; sourceTree = "<group>"; };
+		83A691F11CE46C400065D0EA /* YHGesturePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHGesturePasswordVC.m; sourceTree = "<group>"; };
+		83A691F21CE46C400065D0EA /* YHGesturePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHGesturePasswordVC.xib; sourceTree = "<group>"; };
+		83A691F51CE473200065D0EA /* YHGesturePasswordVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGesturePasswordVM.h; sourceTree = "<group>"; };
+		83A691F61CE473200065D0EA /* YHGesturePasswordVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHGesturePasswordVM.m; sourceTree = "<group>"; };
 		83AD006F1CBF4B4700858A96 /* APIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
 		83AD00701CBF4BD400858A96 /* RdServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdServiceAPI.h; sourceTree = "<group>"; };
 		83AD00711CBF4BD400858A96 /* RdServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdServiceAPI.m; sourceTree = "<group>"; };
@@ -320,7 +328,7 @@
 		0113FE671C98F36D007F8A6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				831D6DA41CBA5E7C001F0605 /* InstanceType */,
+				831D6DA41CBA5E7C001F0605 /* Types */,
 				831D6DA61CBA6453001F0605 /* Services */,
 			);
 			name = Model;
@@ -331,6 +339,7 @@
 			children = (
 				01F7A7CB1CA9636000AB05B8 /* Base */,
 				834D40941CC752C700A86E85 /* HomePage */,
+				8380497B1CE4292D00DC0FAB /* User */,
 				831D6D811CB8A36A001F0605 /* Account */,
 				836F93E91CC91A100088571E /* Product */,
 				831D6D701CB7A844001F0605 /* YHMainTabBarViewModel.h */,
@@ -345,6 +354,7 @@
 				832B8D641CD1ABFB00E7CA58 /* Component */,
 				831D6D661CB7A1B3001F0605 /* Base */,
 				834D40861CC72B4200A86E85 /* HomePage */,
+				8380497A1CE4292300DC0FAB /* User */,
 				831D6D801CB89D04001F0605 /* Account */,
 				836F93E51CC917ED0088571E /* Product */,
 				831D6D6D1CB7A72C001F0605 /* YHMainTabBarController.h */,
@@ -399,18 +409,6 @@
 				832A63971CDDED4400288C6E /* YHWithdrawVC.h */,
 				832A63981CDDED4400288C6E /* YHWithdrawVC.m */,
 				832A63991CDDED4400288C6E /* YHWithdrawVC.xib */,
-				835BF88E1CDBAB25002B48B5 /* YHAccountCenterVC.h */,
-				835BF88F1CDBAB25002B48B5 /* YHAccountCenterVC.m */,
-				835BF8901CDBAB25002B48B5 /* YHAccountCenterVC.xib */,
-				01F7A7E81CA97E5300AB05B8 /* YHLoginVC.h */,
-				01F7A7E91CA97E5300AB05B8 /* YHLoginVC.m */,
-				01F7A7EA1CA97E5300AB05B8 /* YHLoginVC.xib */,
-				831D6D7B1CB89CD8001F0605 /* YHRegisterVC.h */,
-				831D6D7C1CB89CD8001F0605 /* YHRegisterVC.m */,
-				831D6D7D1CB89CD8001F0605 /* YHRegisterVC.xib */,
-				834D406C1CC2707700A86E85 /* YHValidPhoneNumberVC.h */,
-				834D406D1CC2707700A86E85 /* YHValidPhoneNumberVC.m */,
-				834D406E1CC2707700A86E85 /* YHValidPhoneNumberVC.xib */,
 				835BF8761CD9DA31002B48B5 /* YHResetPasswordVC.h */,
 				835BF8771CD9DA31002B48B5 /* YHResetPasswordVC.m */,
 				835BF8781CD9DA31002B48B5 /* YHResetPasswordVC.xib */,
@@ -434,14 +432,6 @@
 				832A63951CDDDEC800288C6E /* YHRechargeVM.m */,
 				832A639C1CDE27A400288C6E /* YHWithdrawVM.h */,
 				832A639D1CDE27A400288C6E /* YHWithdrawVM.m */,
-				835BF8891CDB4639002B48B5 /* YHAccountCenterVM.h */,
-				835BF88A1CDB4639002B48B5 /* YHAccountCenterVM.m */,
-				01F7A7ED1CA97F8E00AB05B8 /* YHLoginVM.h */,
-				01F7A7EE1CA97F8E00AB05B8 /* YHLoginVM.m */,
-				831D6D821CB8A491001F0605 /* YHRegisterVM.h */,
-				831D6D831CB8A491001F0605 /* YHRegisterVM.m */,
-				834D40691CC26FF300A86E85 /* YHValidPhoneNumberVM.h */,
-				834D406A1CC26FF300A86E85 /* YHValidPhoneNumberVM.m */,
 				835BF8731CD9D97C002B48B5 /* YHResetPasswordVM.h */,
 				835BF8741CD9D97C002B48B5 /* YHResetPasswordVM.m */,
 				831E2B751CC21E2800EE08B1 /* YHModifyLoginPwdViewModel.h */,
@@ -454,7 +444,7 @@
 			name = Account;
 			sourceTree = "<group>";
 		};
-		831D6DA41CBA5E7C001F0605 /* InstanceType */ = {
+		831D6DA41CBA5E7C001F0605 /* Types */ = {
 			isa = PBXGroup;
 			children = (
 				831D6DA51CBA60E2001F0605 /* YHInstanceType.h */,
@@ -467,7 +457,7 @@
 				834D40951CC762DF00A86E85 /* YHProductInfo.h */,
 				834D40961CC762DF00A86E85 /* YHProductInfo.m */,
 			);
-			name = InstanceType;
+			name = Types;
 			sourceTree = "<group>";
 		};
 		831D6DA61CBA6453001F0605 /* Services */ = {
@@ -609,6 +599,45 @@
 			name = Product;
 			sourceTree = "<group>";
 		};
+		8380497A1CE4292300DC0FAB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				01F7A7E81CA97E5300AB05B8 /* YHLoginVC.h */,
+				01F7A7E91CA97E5300AB05B8 /* YHLoginVC.m */,
+				01F7A7EA1CA97E5300AB05B8 /* YHLoginVC.xib */,
+				831D6D7B1CB89CD8001F0605 /* YHRegisterVC.h */,
+				831D6D7C1CB89CD8001F0605 /* YHRegisterVC.m */,
+				831D6D7D1CB89CD8001F0605 /* YHRegisterVC.xib */,
+				835BF88E1CDBAB25002B48B5 /* YHAccountCenterVC.h */,
+				835BF88F1CDBAB25002B48B5 /* YHAccountCenterVC.m */,
+				835BF8901CDBAB25002B48B5 /* YHAccountCenterVC.xib */,
+				834D406C1CC2707700A86E85 /* YHValidPhoneNumberVC.h */,
+				834D406D1CC2707700A86E85 /* YHValidPhoneNumberVC.m */,
+				834D406E1CC2707700A86E85 /* YHValidPhoneNumberVC.xib */,
+				83A691F01CE46C400065D0EA /* YHGesturePasswordVC.h */,
+				83A691F11CE46C400065D0EA /* YHGesturePasswordVC.m */,
+				83A691F21CE46C400065D0EA /* YHGesturePasswordVC.xib */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		8380497B1CE4292D00DC0FAB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				01F7A7ED1CA97F8E00AB05B8 /* YHLoginVM.h */,
+				01F7A7EE1CA97F8E00AB05B8 /* YHLoginVM.m */,
+				831D6D821CB8A491001F0605 /* YHRegisterVM.h */,
+				831D6D831CB8A491001F0605 /* YHRegisterVM.m */,
+				835BF8891CDB4639002B48B5 /* YHAccountCenterVM.h */,
+				835BF88A1CDB4639002B48B5 /* YHAccountCenterVM.m */,
+				834D40691CC26FF300A86E85 /* YHValidPhoneNumberVM.h */,
+				834D406A1CC26FF300A86E85 /* YHValidPhoneNumberVM.m */,
+				83A691F51CE473200065D0EA /* YHGesturePasswordVM.h */,
+				83A691F61CE473200065D0EA /* YHGesturePasswordVM.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		83EEFFC41CBE2F0900B126E1 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +738,7 @@
 				832A63911CDDD6DE00288C6E /* YHRechargeVC.xib in Resources */,
 				831D6DA01CBA16CB001F0605 /* YHPasswordManageViewController.xib in Resources */,
 				835D607A1CC7717200E0AE04 /* YHOnceProductTableCell.xib in Resources */,
+				83A691F41CE46C400065D0EA /* YHGesturePasswordVC.xib in Resources */,
 				832A639B1CDDED4400288C6E /* YHWithdrawVC.xib in Resources */,
 				0113FE5D1C98DFFE007F8A6D /* Assets.xcassets in Resources */,
 				831D6D7F1CB89CD8001F0605 /* YHRegisterVC.xib in Resources */,
@@ -786,6 +816,7 @@
 				832A639E1CDE27A400288C6E /* YHWithdrawVM.m in Sources */,
 				834D40851CC71DF500A86E85 /* YHHomePageViewModel.m in Sources */,
 				831D6DA31CBA5E57001F0605 /* YHUserInfo.m in Sources */,
+				83A691F71CE473200065D0EA /* YHGesturePasswordVM.m in Sources */,
 				834D408C1CC72DDB00A86E85 /* YHSectionHeaderView.m in Sources */,
 				01F7A7EF1CA97F8E00AB05B8 /* YHLoginVM.m in Sources */,
 				832A63961CDDDEC800288C6E /* YHRechargeVM.m in Sources */,
@@ -817,6 +848,7 @@
 				831E2B771CC21E2800EE08B1 /* YHModifyLoginPwdViewModel.m in Sources */,
 				831E2B7B1CC21F5400EE08B1 /* YHModifyLoginPwdViewController.m in Sources */,
 				835BF8881CDB39D0002B48B5 /* YHPercentCircleView.m in Sources */,
+				83A691F31CE46C400065D0EA /* YHGesturePasswordVC.m in Sources */,
 				836A1C9B1CD5BEE900BEE025 /* YHHighMarginDetailHeader.m in Sources */,
 				834D40821CC71B8300A86E85 /* YHHomePageViewController.m in Sources */,
 				0113FE551C98DFFE007F8A6D /* YHAppDelegate.m in Sources */,

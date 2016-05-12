@@ -12,6 +12,7 @@
 #import "YHViewModelServices.h"
 #import "YHViewModelServicesImpl.h"
 #import "YHLoginVC.h"
+#import "YHGesturePasswordVM.h"
 #import "YHMainTabBarViewModel.h"
 #import "UIViewController+Alert.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
@@ -60,6 +61,11 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self presentGestureLock];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -79,10 +85,6 @@
                 break;
         }
     }];
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 - (void)configureApplication {
@@ -122,6 +124,10 @@
         @strongify(self)
         [self.reachability startNotifier];
     });
+}
+
+- (void)presentGestureLock {
+    [self.navigation presentViewModel:[[YHGesturePasswordVM alloc] init] animated:NO completion:nil];
 }
 
 @end

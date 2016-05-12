@@ -50,7 +50,8 @@
              @"YHModifyLoginPwdViewModel": @"YHModifyLoginPwdViewController",
              @"YHResetPasswordVM": @"YHResetPasswordVC",
              @"YHRechargeVM": @"YHRechargeVC",
-             @"YHWithdrawVM": @"YHWithdrawVC"
+             @"YHWithdrawVM": @"YHWithdrawVC",
+             @"YHGesturePasswordVM": @"YHGesturePasswordVC"
              };
 }
 
