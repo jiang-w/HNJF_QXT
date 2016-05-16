@@ -8,6 +8,7 @@
 
 #import "YHValidGesturePasswordVM.h"
 #import "YHLoginVM.h"
+#import <SSKeychain/SSKeychain.h>
 
 @interface YHValidGesturePasswordVM ()
 
@@ -26,9 +27,11 @@
     
     @weakify(self)
     self.validGesturePasswordCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        YHUserProfile *profile = [YHUserProfile currentProfile];
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self)
-            if ([input isEqualToString:@"0,3,6,7,8"]) {
+            NSString *gesturePwd = [SSKeychain passwordForService:@"QXT_GesturePassword" account:profile.userId];
+            if ([input isEqualToString:gesturePwd]) {
                 [subscriber sendNext:@(YES)];
                 [self dismissViewModelAnimated:YES completion:nil];
             }

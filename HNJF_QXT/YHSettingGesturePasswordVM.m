@@ -7,6 +7,7 @@
 //
 
 #import "YHSettingGesturePasswordVM.h"
+#import <SSKeychain/SSKeychain.h>
 
 @interface YHSettingGesturePasswordVM ()
 
@@ -39,6 +40,7 @@
         if (self.password && [self.confirmPassword isEqualToString:self.password]) {
             YHUserProfile *profile = [YHUserProfile currentProfile];
             profile.allowGesturePassword = 1;
+            [SSKeychain setPassword:self.password forService:@"QXT_GesturePassword" account:profile.userId];
             [self dismissViewModelAnimated:YES completion:nil];
         }
         return [RACSignal empty];

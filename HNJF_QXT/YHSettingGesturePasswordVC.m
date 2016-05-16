@@ -61,6 +61,11 @@
 }
 
 - (void)gestureLockView:(KKGestureLockView *)gestureLockView didEndWithPasscode:(NSString *)passcode {
+    if ([passcode componentsSeparatedByString:@","].count < 4) {
+        self.infoLabel.text = @"至少连接四个点";
+        return;
+    }
+    
     if (!self.viewModel.password) {
         self.viewModel.password = passcode;
     }

@@ -10,7 +10,6 @@
 #import "YHRegisterVM.h"
 #import "YHValidPhoneNumberVM.h"
 #import "YHSettingGesturePasswordVM.h"
-#import <SSKeychain/SSKeychain.h>
 
 @interface YHLoginVM ()
 

@@ -16,7 +16,7 @@
     dispatch_once(&onceToken, ^{
         profile = [[self alloc] init];
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        profile.userId = [userDefaults stringForKey:@"userId"];
+        profile.userId = [userDefaults objectForKey:@"userId"];
         profile.allowGesturePassword = [userDefaults objectForKey:@"allowGesturePassword"]? [userDefaults integerForKey:@"allowGesturePassword"] : -1;
         profile.allowTouchId = [userDefaults objectForKey:@"allowTouchId"]? [userDefaults integerForKey:@"allowTouchId"] : -1;
     });
