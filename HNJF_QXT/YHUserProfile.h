@@ -10,9 +10,9 @@
 
 @interface YHUserProfile : NSObject
 
-@property (nonatomic, copy  ) NSString *userId;
-@property (nonatomic, assign) BOOL     allowGesturePassword;
-@property (nonatomic, assign) BOOL     allowTouchId;
+@property (nonatomic, copy  ) NSString  *userId;
+@property (nonatomic, assign) NSInteger allowGesturePassword;
+@property (nonatomic, assign) NSInteger allowTouchId;
 
 + (instancetype)currentProfile;
 

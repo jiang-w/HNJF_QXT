@@ -1,5 +1,5 @@
 //
-//  YHGesturePasswordVM.h
+//  YHValidGesturePasswordVM.h
 //  HNJF_QXT
 //
 //  Created by 江伟 on 16/5/12.
@@ -8,7 +8,7 @@
 
 #import "YHViewModel.h"
 
-@interface YHGesturePasswordVM : YHViewModel
+@interface YHValidGesturePasswordVM : YHViewModel
 
 @property (nonatomic, assign, readonly) NSInteger trialTimes;
 @property (nonatomic, strong, readonly) RACCommand *validGesturePasswordCommand;

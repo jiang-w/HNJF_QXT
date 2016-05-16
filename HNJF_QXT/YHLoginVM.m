@@ -9,6 +9,7 @@
 #import "YHLoginVM.h"
 #import "YHRegisterVM.h"
 #import "YHValidPhoneNumberVM.h"
+#import "YHValidGesturePasswordVM.h"
 #import <SSKeychain/SSKeychain.h>
 
 @interface YHLoginVM ()
@@ -40,9 +41,16 @@
                          initWithEnabled:self.validLoginSignal
                          signalBlock:^RACSignal *(id input) {
                              @strongify(self)
-                             return [[[self.services.userService loginWithUserName:self.username password:self.password] takeUntil:self.rac_willDeallocSignal]
+                             YHUserProfile *profile = [YHUserProfile currentProfile];
+                             return [[[[self.services.userService loginWithUserName:self.username password:self.password] takeUntil:self.rac_willDeallocSignal]
+                                      doNext:^(YHUserInfo *user) {
+                                          profile.userId = user.identity;
+                                      }]
                                      doCompleted:^{
                                          [self dismissViewModelAnimated:NO completion:nil];
+                                         if (profile.allowGesturePassword == -1) {
+                                             [self presentViewModel:[[YHValidGesturePasswordVM alloc] init] animated:NO completion:nil];
+                                         }
                                      }];
                          }];
     

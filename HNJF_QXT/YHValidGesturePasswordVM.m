@@ -1,22 +1,22 @@
 //
-//  YHGesturePasswordVM.m
+//  YHValidGesturePasswordVM.m
 //  HNJF_QXT
 //
 //  Created by 江伟 on 16/5/12.
 //  Copyright © 2016年 jiangw. All rights reserved.
 //
 
-#import "YHGesturePasswordVM.h"
+#import "YHValidGesturePasswordVM.h"
 #import "YHLoginVM.h"
 
-@interface YHGesturePasswordVM ()
+@interface YHValidGesturePasswordVM ()
 
 @property (nonatomic, assign, readwrite) NSInteger trialTimes;
 @property (nonatomic, strong, readwrite) RACCommand *validGesturePasswordCommand;
 
 @end
 
-@implementation YHGesturePasswordVM
+@implementation YHValidGesturePasswordVM
 
 - (void)initialize {
     [super initialize];
@@ -36,7 +36,7 @@
                 self.trialTimes -= 1;
                 if (self.trialTimes == 0) {
                     [self dismissViewModelAnimated:NO completion:nil];
-                    [self presentViewModel:[[YHLoginVM alloc] init] animated:YES completion:nil];
+                    [self presentViewModel:[[YHLoginVM alloc] init] animated:NO completion:nil];
                 }
             }
             [subscriber sendCompleted];

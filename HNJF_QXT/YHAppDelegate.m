@@ -12,7 +12,7 @@
 #import "YHViewModelServices.h"
 #import "YHViewModelServicesImpl.h"
 #import "YHLoginVC.h"
-#import "YHGesturePasswordVM.h"
+#import "YHValidGesturePasswordVM.h"
 #import "YHMainTabBarViewModel.h"
 #import "UIViewController+Alert.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
@@ -129,8 +129,8 @@
 
 - (void)presentGestureLock {
     YHUserProfile *profile = [YHUserProfile currentProfile];
-    if (profile.allowGesturePassword) {
-        [self.navigation presentViewModel:[[YHGesturePasswordVM alloc] init] animated:NO completion:nil];
+    if (profile.allowGesturePassword == 1) {
+        [self.navigation presentViewModel:[[YHValidGesturePasswordVM alloc] init] animated:NO completion:nil];
     }
 }
 

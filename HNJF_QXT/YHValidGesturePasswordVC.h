@@ -1,5 +1,5 @@
 //
-//  YHGesturePasswordVC.h
+//  YHValidGesturePasswordVC.h
 //  HNJF_QXT
 //
 //  Created by 江伟 on 16/5/12.
@@ -9,6 +9,6 @@
 #import "YHViewController.h"
 #import "KKGestureLockView.h"
 
-@interface YHGesturePasswordVC : YHViewController <KKGestureLockViewDelegate>
+@interface YHValidGesturePasswordVC : YHViewController <KKGestureLockViewDelegate>
 
 @end

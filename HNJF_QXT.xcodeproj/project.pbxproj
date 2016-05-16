@@ -88,9 +88,9 @@
 		836F93E81CC918390088571E /* YHHighMarginProductListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 836F93E71CC918390088571E /* YHHighMarginProductListVC.m */; };
 		836F93EC1CC91A2B0088571E /* YHHighMarginProductListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 836F93EB1CC91A2B0088571E /* YHHighMarginProductListVM.m */; };
 		836F93EF1CC9296C0088571E /* YHHighMarginProductCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 836F93EE1CC9296C0088571E /* YHHighMarginProductCellVM.m */; };
-		83A691F31CE46C400065D0EA /* YHGesturePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A691F11CE46C400065D0EA /* YHGesturePasswordVC.m */; };
-		83A691F41CE46C400065D0EA /* YHGesturePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A691F21CE46C400065D0EA /* YHGesturePasswordVC.xib */; };
-		83A691F71CE473200065D0EA /* YHGesturePasswordVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A691F61CE473200065D0EA /* YHGesturePasswordVM.m */; };
+		83A691F31CE46C400065D0EA /* YHValidGesturePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A691F11CE46C400065D0EA /* YHValidGesturePasswordVC.m */; };
+		83A691F41CE46C400065D0EA /* YHValidGesturePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A691F21CE46C400065D0EA /* YHValidGesturePasswordVC.xib */; };
+		83A691F71CE473200065D0EA /* YHValidGesturePasswordVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A691F61CE473200065D0EA /* YHValidGesturePasswordVM.m */; };
 		83AD00721CBF4BD400858A96 /* RdServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AD00711CBF4BD400858A96 /* RdServiceAPI.m */; };
 		83F165891CBF6C5C000FADCB /* NSString+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F165881CBF6C5C000FADCB /* NSString+Utility.m */; };
 		83F34B451CBF89500044BA5C /* NSDictionary+Output.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F34B441CBF89500044BA5C /* NSDictionary+Output.m */; };
@@ -253,11 +253,11 @@
 		836F93EB1CC91A2B0088571E /* YHHighMarginProductListVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHHighMarginProductListVM.m; sourceTree = "<group>"; };
 		836F93ED1CC9296C0088571E /* YHHighMarginProductCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHHighMarginProductCellVM.h; sourceTree = "<group>"; };
 		836F93EE1CC9296C0088571E /* YHHighMarginProductCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHHighMarginProductCellVM.m; sourceTree = "<group>"; };
-		83A691F01CE46C400065D0EA /* YHGesturePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGesturePasswordVC.h; sourceTree = "<group>"; };
-		83A691F11CE46C400065D0EA /* YHGesturePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHGesturePasswordVC.m; sourceTree = "<group>"; };
-		83A691F21CE46C400065D0EA /* YHGesturePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHGesturePasswordVC.xib; sourceTree = "<group>"; };
-		83A691F51CE473200065D0EA /* YHGesturePasswordVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGesturePasswordVM.h; sourceTree = "<group>"; };
-		83A691F61CE473200065D0EA /* YHGesturePasswordVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHGesturePasswordVM.m; sourceTree = "<group>"; };
+		83A691F01CE46C400065D0EA /* YHValidGesturePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHValidGesturePasswordVC.h; sourceTree = "<group>"; };
+		83A691F11CE46C400065D0EA /* YHValidGesturePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHValidGesturePasswordVC.m; sourceTree = "<group>"; };
+		83A691F21CE46C400065D0EA /* YHValidGesturePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHValidGesturePasswordVC.xib; sourceTree = "<group>"; };
+		83A691F51CE473200065D0EA /* YHValidGesturePasswordVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHValidGesturePasswordVM.h; sourceTree = "<group>"; };
+		83A691F61CE473200065D0EA /* YHValidGesturePasswordVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHValidGesturePasswordVM.m; sourceTree = "<group>"; };
 		83AD006F1CBF4B4700858A96 /* APIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
 		83AD00701CBF4BD400858A96 /* RdServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdServiceAPI.h; sourceTree = "<group>"; };
 		83AD00711CBF4BD400858A96 /* RdServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdServiceAPI.m; sourceTree = "<group>"; };
@@ -614,9 +614,9 @@
 				834D406C1CC2707700A86E85 /* YHValidPhoneNumberVC.h */,
 				834D406D1CC2707700A86E85 /* YHValidPhoneNumberVC.m */,
 				834D406E1CC2707700A86E85 /* YHValidPhoneNumberVC.xib */,
-				83A691F01CE46C400065D0EA /* YHGesturePasswordVC.h */,
-				83A691F11CE46C400065D0EA /* YHGesturePasswordVC.m */,
-				83A691F21CE46C400065D0EA /* YHGesturePasswordVC.xib */,
+				83A691F01CE46C400065D0EA /* YHValidGesturePasswordVC.h */,
+				83A691F11CE46C400065D0EA /* YHValidGesturePasswordVC.m */,
+				83A691F21CE46C400065D0EA /* YHValidGesturePasswordVC.xib */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -632,8 +632,8 @@
 				835BF88A1CDB4639002B48B5 /* YHAccountCenterVM.m */,
 				834D40691CC26FF300A86E85 /* YHValidPhoneNumberVM.h */,
 				834D406A1CC26FF300A86E85 /* YHValidPhoneNumberVM.m */,
-				83A691F51CE473200065D0EA /* YHGesturePasswordVM.h */,
-				83A691F61CE473200065D0EA /* YHGesturePasswordVM.m */,
+				83A691F51CE473200065D0EA /* YHValidGesturePasswordVM.h */,
+				83A691F61CE473200065D0EA /* YHValidGesturePasswordVM.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -738,7 +738,7 @@
 				832A63911CDDD6DE00288C6E /* YHRechargeVC.xib in Resources */,
 				831D6DA01CBA16CB001F0605 /* YHPasswordManageViewController.xib in Resources */,
 				835D607A1CC7717200E0AE04 /* YHOnceProductTableCell.xib in Resources */,
-				83A691F41CE46C400065D0EA /* YHGesturePasswordVC.xib in Resources */,
+				83A691F41CE46C400065D0EA /* YHValidGesturePasswordVC.xib in Resources */,
 				832A639B1CDDED4400288C6E /* YHWithdrawVC.xib in Resources */,
 				0113FE5D1C98DFFE007F8A6D /* Assets.xcassets in Resources */,
 				831D6D7F1CB89CD8001F0605 /* YHRegisterVC.xib in Resources */,
@@ -816,7 +816,7 @@
 				832A639E1CDE27A400288C6E /* YHWithdrawVM.m in Sources */,
 				834D40851CC71DF500A86E85 /* YHHomePageViewModel.m in Sources */,
 				831D6DA31CBA5E57001F0605 /* YHUserInfo.m in Sources */,
-				83A691F71CE473200065D0EA /* YHGesturePasswordVM.m in Sources */,
+				83A691F71CE473200065D0EA /* YHValidGesturePasswordVM.m in Sources */,
 				834D408C1CC72DDB00A86E85 /* YHSectionHeaderView.m in Sources */,
 				01F7A7EF1CA97F8E00AB05B8 /* YHLoginVM.m in Sources */,
 				832A63961CDDDEC800288C6E /* YHRechargeVM.m in Sources */,
@@ -848,7 +848,7 @@
 				831E2B771CC21E2800EE08B1 /* YHModifyLoginPwdViewModel.m in Sources */,
 				831E2B7B1CC21F5400EE08B1 /* YHModifyLoginPwdViewController.m in Sources */,
 				835BF8881CDB39D0002B48B5 /* YHPercentCircleView.m in Sources */,
-				83A691F31CE46C400065D0EA /* YHGesturePasswordVC.m in Sources */,
+				83A691F31CE46C400065D0EA /* YHValidGesturePasswordVC.m in Sources */,
 				836A1C9B1CD5BEE900BEE025 /* YHHighMarginDetailHeader.m in Sources */,
 				834D40821CC71B8300A86E85 /* YHHomePageViewController.m in Sources */,
 				0113FE551C98DFFE007F8A6D /* YHAppDelegate.m in Sources */,

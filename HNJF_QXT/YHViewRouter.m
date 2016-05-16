@@ -51,7 +51,7 @@
              @"YHResetPasswordVM": @"YHResetPasswordVC",
              @"YHRechargeVM": @"YHRechargeVC",
              @"YHWithdrawVM": @"YHWithdrawVC",
-             @"YHGesturePasswordVM": @"YHGesturePasswordVC"
+             @"YHValidGesturePasswordVM": @"YHValidGesturePasswordVC"
              };
 }
 

@@ -1,25 +1,25 @@
 //
-//  YHGesturePasswordVC.m
+//  YHValidGesturePasswordVC.m
 //  HNJF_QXT
 //
 //  Created by 江伟 on 16/5/12.
 //  Copyright © 2016年 jiangw. All rights reserved.
 //
 
-#import "YHGesturePasswordVC.h"
-#import "YHGesturePasswordVM.h"
+#import "YHValidGesturePasswordVC.h"
+#import "YHValidGesturePasswordVM.h"
 
-@interface YHGesturePasswordVC ()
+@interface YHValidGesturePasswordVC ()
 
 @property (weak, nonatomic) IBOutlet KKGestureLockView *gestureLockView;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginAgainButton;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
-@property (nonatomic, strong) YHGesturePasswordVM *viewModel;
+@property (nonatomic, strong) YHValidGesturePasswordVM *viewModel;
 
 @end
 
-@implementation YHGesturePasswordVC
+@implementation YHValidGesturePasswordVC
 
 @dynamic viewModel;
 

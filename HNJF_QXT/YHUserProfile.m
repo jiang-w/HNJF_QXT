@@ -10,19 +10,16 @@
 
 @implementation YHUserProfile
 
-+ (instancetype)defaultProfile {
-    YHUserProfile *profile = [[YHUserProfile alloc] init];
-    profile.allowGesturePassword = NO;
-    profile.allowTouchId = NO;
-    return profile;
-}
-
 + (instancetype)currentProfile {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    YHUserProfile *profile = [[YHUserProfile alloc] init];
-    profile.userId = [userDefaults stringForKey:@"userId"];
-    profile.allowGesturePassword = [userDefaults boolForKey:@"allowGesturePassword"];
-    profile.allowTouchId = [userDefaults boolForKey:@"allowTouchId"];
+    static YHUserProfile *profile = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        profile = [[self alloc] init];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        profile.userId = [userDefaults stringForKey:@"userId"];
+        profile.allowGesturePassword = [userDefaults integerForKey:@"allowGesturePassword"]? [userDefaults integerForKey:@"allowGesturePassword"] : -1;
+        profile.allowTouchId = [userDefaults integerForKey:@"allowTouchId"]? [userDefaults integerForKey:@"allowTouchId"] : -1;
+    });
     return profile;
 }
 
