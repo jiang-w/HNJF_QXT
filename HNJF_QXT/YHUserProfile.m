@@ -17,10 +17,18 @@
         profile = [[self alloc] init];
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         profile.userId = [userDefaults stringForKey:@"userId"];
-        profile.allowGesturePassword = [userDefaults integerForKey:@"allowGesturePassword"]? [userDefaults integerForKey:@"allowGesturePassword"] : -1;
-        profile.allowTouchId = [userDefaults integerForKey:@"allowTouchId"]? [userDefaults integerForKey:@"allowTouchId"] : -1;
+        profile.allowGesturePassword = [userDefaults objectForKey:@"allowGesturePassword"]? [userDefaults integerForKey:@"allowGesturePassword"] : -1;
+        profile.allowTouchId = [userDefaults objectForKey:@"allowTouchId"]? [userDefaults integerForKey:@"allowTouchId"] : -1;
     });
     return profile;
+}
+
+- (void)synchronize {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.userId forKey:@"userId"];
+    [userDefaults setInteger:self.allowGesturePassword forKey:@"allowGesturePassword"];
+    [userDefaults setInteger:self.allowTouchId forKey:@"allowTouchId"];
+    [userDefaults synchronize];
 }
 
 @end

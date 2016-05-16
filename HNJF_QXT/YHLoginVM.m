@@ -9,7 +9,7 @@
 #import "YHLoginVM.h"
 #import "YHRegisterVM.h"
 #import "YHValidPhoneNumberVM.h"
-#import "YHValidGesturePasswordVM.h"
+#import "YHSettingGesturePasswordVM.h"
 #import <SSKeychain/SSKeychain.h>
 
 @interface YHLoginVM ()
@@ -49,7 +49,7 @@
                                      doCompleted:^{
                                          [self dismissViewModelAnimated:NO completion:nil];
                                          if (profile.allowGesturePassword == -1) {
-                                             [self presentViewModel:[[YHValidGesturePasswordVM alloc] init] animated:NO completion:nil];
+                                             [self presentViewModel:[[YHSettingGesturePasswordVM alloc] init] animated:NO completion:nil];
                                          }
                                      }];
                          }];

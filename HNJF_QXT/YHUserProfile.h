@@ -16,4 +16,6 @@
 
 + (instancetype)currentProfile;
 
+- (void)synchronize;
+
 @end
