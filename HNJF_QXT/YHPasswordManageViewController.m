@@ -26,11 +26,14 @@
 }
 
 - (void)bindViewModel {
+    [super bindViewModel];
+    
     @weakify(self)
-    [self.changeLoginPwdGesture.rac_gestureSignal subscribeNext:^(id x) {
-        @strongify(self)
-        [self.viewModel.changeLoginPasswordCommand execute:nil];
-    }];
+    [self.changeLoginPwdGesture.rac_gestureSignal
+     subscribeNext:^(id x) {
+         @strongify(self)
+         [self.viewModel.changeLoginPasswordCommand execute:nil];
+     }];
     
     
 }

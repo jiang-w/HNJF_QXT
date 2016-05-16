@@ -14,4 +14,6 @@
 @property (nonatomic, assign) BOOL     allowGesturePassword;
 @property (nonatomic, assign) BOOL     allowTouchId;
 
++ (instancetype)currentProfile;
+
 @end

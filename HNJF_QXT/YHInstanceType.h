@@ -12,5 +12,6 @@
 #import "YHUserInfo.h"
 #import "YHProductInfo.h"
 #import "YHAccountInfo.h"
+#import "YHUserProfile.h"
 
 #endif /* YHInstanceType_h */

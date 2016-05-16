@@ -10,6 +10,7 @@
 
 @interface YHGesturePasswordVM : YHViewModel
 
+@property (nonatomic, assign, readonly) NSInteger trialTimes;
 @property (nonatomic, strong, readonly) RACCommand *validGesturePasswordCommand;
 
 @end

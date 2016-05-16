@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet KKGestureLockView *gestureLockView;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginAgainButton;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (nonatomic, strong) YHGesturePasswordVM *viewModel;
 
 @end
@@ -40,6 +41,13 @@
 
 - (void)bindViewModel {
     [super bindViewModel];
+    
+    @weakify(self)
+    [[RACObserve(self.viewModel, trialTimes) skip:1]
+     subscribeNext:^(id x) {
+         @strongify(self)
+         self.infoLabel.text = [NSString stringWithFormat:@"密码不正确，还可以尝试%@次", x];
+     }];
 }
 
 - (void)gestureLockView:(KKGestureLockView *)gestureLockView didEndWithPasscode:(NSString *)passcode {

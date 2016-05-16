@@ -128,7 +128,10 @@
 }
 
 - (void)presentGestureLock {
-    [self.navigation presentViewModel:[[YHGesturePasswordVM alloc] init] animated:NO completion:nil];
+    YHUserProfile *profile = [YHUserProfile currentProfile];
+    if (profile.allowGesturePassword) {
+        [self.navigation presentViewModel:[[YHGesturePasswordVM alloc] init] animated:NO completion:nil];
+    }
 }
 
 @end
