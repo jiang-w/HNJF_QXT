@@ -8,6 +8,7 @@
 
 #import "YHValidGesturePasswordVC.h"
 #import "YHValidGesturePasswordVM.h"
+#import "YHLoginVM.h"
 
 @interface YHValidGesturePasswordVC ()
 
@@ -47,6 +48,15 @@
      subscribeNext:^(id x) {
          @strongify(self)
          self.infoLabel.text = [NSString stringWithFormat:@"密码不正确，还可以尝试%@次", x];
+     }];
+    
+    [[RACSignal merge:@[[self.forgetPasswordButton rac_signalForControlEvents:UIControlEventTouchUpInside],
+                        [self.loginAgainButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+                        ]]
+     subscribeNext:^(id x) {
+         @strongify(self)
+         [self.viewModel dismissViewModelAnimated:NO completion:nil];
+         [self.viewModel presentViewModel:[[YHLoginVM alloc] init] animated:YES completion:nil];
      }];
 }
 

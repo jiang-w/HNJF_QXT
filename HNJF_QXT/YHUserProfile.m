@@ -23,6 +23,15 @@
     return profile;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.userId = nil;
+        self.allowGesturePassword = -1;
+        self.allowTouchId = -1;
+    }
+    return self;
+}
+
 - (void)synchronize {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:self.userId forKey:@"userId"];
