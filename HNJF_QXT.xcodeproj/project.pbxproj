@@ -12,7 +12,6 @@
 		0113FE521C98DFFE007F8A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0113FE511C98DFFE007F8A6D /* main.m */; };
 		0113FE551C98DFFE007F8A6D /* YHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0113FE541C98DFFE007F8A6D /* YHAppDelegate.m */; };
 		0113FE5D1C98DFFE007F8A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0113FE5C1C98DFFE007F8A6D /* Assets.xcassets */; };
-		0113FE601C98DFFE007F8A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0113FE5E1C98DFFE007F8A6D /* LaunchScreen.storyboard */; };
 		014E23CF1CB28DE100E4E7D6 /* CALayer+XibConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E23CE1CB28DE100E4E7D6 /* CALayer+XibConfiguration.m */; };
 		01F7A7C61CA95EA900AB05B8 /* YHViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F7A7C51CA95EA900AB05B8 /* YHViewModel.m */; };
 		01F7A7CA1CA9602700AB05B8 /* YHViewModelNavigationImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F7A7C91CA9602700AB05B8 /* YHViewModelNavigationImpl.m */; };
@@ -95,6 +94,7 @@
 		83E68C231CE9ACD00097181C /* YHSettingGesturePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E68C211CE9ACD00097181C /* YHSettingGesturePasswordVC.m */; };
 		83E68C241CE9ACD00097181C /* YHSettingGesturePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E68C221CE9ACD00097181C /* YHSettingGesturePasswordVC.xib */; };
 		83E68C271CE9B0780097181C /* YHSettingGesturePasswordVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E68C261CE9B0780097181C /* YHSettingGesturePasswordVM.m */; };
+		83E68C291CEB0E2F0097181C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E68C281CEB0E2F0097181C /* Main.storyboard */; };
 		83F165891CBF6C5C000FADCB /* NSString+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F165881CBF6C5C000FADCB /* NSString+Utility.m */; };
 		83F34B451CBF89500044BA5C /* NSDictionary+Output.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F34B441CBF89500044BA5C /* NSDictionary+Output.m */; };
 		A1066CA24A07FD69EDF6BA8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C783D977F03FB8CEF660B96 /* libPods.a */; };
@@ -112,7 +112,6 @@
 		0113FE531C98DFFE007F8A6D /* YHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAppDelegate.h; sourceTree = "<group>"; };
 		0113FE541C98DFFE007F8A6D /* YHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAppDelegate.m; sourceTree = "<group>"; };
 		0113FE5C1C98DFFE007F8A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0113FE5F1C98DFFE007F8A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0113FE611C98DFFE007F8A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		014E23CD1CB28DE100E4E7D6 /* CALayer+XibConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+XibConfiguration.h"; sourceTree = "<group>"; };
 		014E23CE1CB28DE100E4E7D6 /* CALayer+XibConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XibConfiguration.m"; sourceTree = "<group>"; };
@@ -269,6 +268,7 @@
 		83E68C221CE9ACD00097181C /* YHSettingGesturePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSettingGesturePasswordVC.xib; sourceTree = "<group>"; };
 		83E68C251CE9B0780097181C /* YHSettingGesturePasswordVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSettingGesturePasswordVM.h; sourceTree = "<group>"; };
 		83E68C261CE9B0780097181C /* YHSettingGesturePasswordVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSettingGesturePasswordVM.m; sourceTree = "<group>"; };
+		83E68C281CEB0E2F0097181C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		83F165871CBF6C5C000FADCB /* NSString+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utility.h"; sourceTree = "<group>"; };
 		83F165881CBF6C5C000FADCB /* NSString+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utility.m"; sourceTree = "<group>"; };
 		83F34B431CBF89500044BA5C /* NSDictionary+Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Output.h"; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 				0113FE531C98DFFE007F8A6D /* YHAppDelegate.h */,
 				0113FE541C98DFFE007F8A6D /* YHAppDelegate.m */,
 				0113FE5C1C98DFFE007F8A6D /* Assets.xcassets */,
-				0113FE5E1C98DFFE007F8A6D /* LaunchScreen.storyboard */,
+				83E68C281CEB0E2F0097181C /* Main.storyboard */,
 				0113FE501C98DFFE007F8A6D /* Supporting Files */,
 			);
 			path = HNJF_QXT;
@@ -738,11 +738,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E68C291CEB0E2F0097181C /* Main.storyboard in Resources */,
 				836A1C981CD5BE9200BEE025 /* YHHighMarginDetailHeader.xib in Resources */,
 				835D607F1CC7C89400E0AE04 /* YHFundProductTableCell.xib in Resources */,
 				834D40701CC2707700A86E85 /* YHValidPhoneNumberVC.xib in Resources */,
 				831D6D8F1CB9F5D1001F0605 /* YHSettingViewController.xib in Resources */,
-				0113FE601C98DFFE007F8A6D /* LaunchScreen.storyboard in Resources */,
 				835BF8921CDBAB25002B48B5 /* YHAccountCenterVC.xib in Resources */,
 				835BF87A1CD9DA31002B48B5 /* YHResetPasswordVC.xib in Resources */,
 				831E2B7C1CC21F5400EE08B1 /* YHModifyLoginPwdViewController.xib in Resources */,
@@ -890,17 +890,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		0113FE5E1C98DFFE007F8A6D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0113FE5F1C98DFFE007F8A6D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0113FE621C98DFFE007F8A6D /* Debug */ = {
