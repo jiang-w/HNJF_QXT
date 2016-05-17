@@ -51,11 +51,14 @@
                                  combineLatest:@[self.validPhoneSignal,
                                                  self.validPasswordSignal,
                                                  self.validConfirmPwdSignal,
-                                                 [RACSignal return:@(![self.vCode isNullOrEmpty])]
+                                                 [RACObserve(self, vCode)
+                                                  map:^id(NSString *value) {
+                                                      return @(![value isNullOrEmpty]);
+                                                  }]
                                                  ]]
                                 map:^id(RACTuple *value) {
-                                    RACTupleUnpack(id b1, id b2, id b3) = value;
-                                    return @([b1 boolValue] && [b2 boolValue] && [b3 boolValue]);
+                                    RACTupleUnpack(id b1, id b2, id b3, id b4) = value;
+                                    return @([b1 boolValue] && [b2 boolValue] && [b3 boolValue] && [b4 boolValue]);
                                 }];
     
     // 获取验证码
@@ -103,7 +106,7 @@
                                   return nil;
                               }];
                               
-                              RACSignal *registerSignal = [self.services.userService registerUserWithPhoneNumber:self.phoneNumber andPassword:self.password];
+                              RACSignal *registerSignal = [self.services.userService registerUserWithPhoneNumber:self.phoneNumber Password:self.password ValidCode:self.vCode];
                               
                               RACSignal *loginSignal = [self.services.userService loginWithUserName:self.phoneNumber password:self.password];
                               

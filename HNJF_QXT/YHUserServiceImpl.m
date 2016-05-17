@@ -60,55 +60,28 @@
 
 - (RACSignal *)validPhoneNumber:(NSString *)phone {
     NSDictionary *params = @{@"pwdIdentify": phone};
-    return [[[RdServiceAPI sharedInstance]
-             signalWithServiceAPI:RDAPI_User_CheckUsernameAvailable Parameters:params]
-            flattenMap:^RACStream *(RdServiceAPIResult *result) {
-                return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-                    if (result.code == kRdServiceResultSuccess) {
-                        [subscriber sendCompleted];
-                    }
-                    else {
-                        [subscriber sendError:[NSError initWithServiceResult:result]];
-                    }
-                    
-                    return nil;
-                }];
-            }];
+    return [[RdServiceAPI sharedInstance]
+            signalWithServiceAPI:RDAPI_User_CheckUsernameAvailable Parameters:params];
 }
 
 - (RACSignal *)sendVerificationCodeForPhone:(NSString *)phoneNumber {
     NSDictionary *params = @{@"noticeId": @"notice_reg",
                              @"receiveAddr": phoneNumber,
                              @"type": @"mobilePhone"};
-    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_GetCode Parameters:params] flattenMap:^RACStream *(RdServiceAPIResult *result) {
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            if (result.code == kRdServiceResultSuccess) {
-                [subscriber sendCompleted];
-            }
-            else {
-                [subscriber sendError:[NSError initWithServiceResult:result]];
-            }
-            
-            return nil;
-        }];
-    }];
+    return [[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_GetCode Parameters:params];
 }
 
-- (RACSignal *)registerUserWithPhoneNumber:(NSString *)phone andPassword:(NSString *)password {
+- (RACSignal *)registerUserWithPhoneNumber:(NSString *)phone Password:(NSString *)password ValidCode:(NSString *)vcode {
+    if (![vcode isEqualToString:@"888888"]) {
+        return [RACSignal error:[NSError
+                                 errorWithDomain:API_ERROR_DOMAIN
+                                 code:0
+                                 userInfo:@{@"msg": @"短信验证码错误"}]];
+    }
+    
     NSDictionary *params = @{@"registerPhone": phone,
                              @"pwd": password};
-    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_DoRegister Parameters:params] flattenMap:^RACStream *(RdServiceAPIResult *result) {
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            if (result.code == kRdServiceResultSuccess) {
-                [subscriber sendCompleted];
-            }
-            else {
-                [subscriber sendError:[NSError initWithServiceResult:result]];
-            }
-            
-            return nil;
-        }];
-    }];
+    return [[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_User_DoRegister Parameters:params];
 }
 
 - (RACSignal *)changeLoginPassword:(NSString *)oldPassword withReplacePassword:(NSString *)replacePassword {
@@ -116,19 +89,7 @@
                              @"newPwd": replacePassword,
                              @"type": @"userpwd"
                              };
-    return [[[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_Account_ModifyPwd Parameters:params]
-            flattenMap:^RACStream *(RdServiceAPIResult *result) {
-                return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-                    if (result.code == kRdServiceResultSuccess) {
-                        [subscriber sendCompleted];
-                    }
-                    else {
-                        [subscriber sendError:[NSError initWithServiceResult:result]];
-                    }
-                    
-                    return nil;
-                }];
-            }];
+    return [[RdServiceAPI sharedInstance] signalWithServiceAPI:RDAPI_Account_ModifyPwd Parameters:params];
 }
 
 - (RACSignal *)checkValidCodeWithPhoneNumber:(NSString *)number andValidCode:(NSString *)code {
@@ -136,11 +97,8 @@
                              @"code": code,
                              @"noticeId": @"get_pwd_phone",
                              @"type": @"mobilePhone"};
-    return [[[RdServiceAPI sharedInstance]
-             signalWithServiceAPI:RDAPI_User_CheckCode Parameters:params]
-            map:^id(NSDictionary *responseData) {
-                return responseData;
-            }];
+    return [[RdServiceAPI sharedInstance]
+            signalWithServiceAPI:RDAPI_User_CheckCode Parameters:params];
 }
 
 

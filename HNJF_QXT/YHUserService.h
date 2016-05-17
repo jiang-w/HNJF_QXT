@@ -33,7 +33,7 @@
 - (RACSignal *)checkValidCodeWithPhoneNumber:(NSString *)number andValidCode:(NSString *)code;
 
 // 注册
-- (RACSignal *)registerUserWithPhoneNumber:(NSString *)phone andPassword:(NSString *)password;
+- (RACSignal *)registerUserWithPhoneNumber:(NSString *)phone Password:(NSString *)password ValidCode:(NSString *)vcode;
 
 - (RACSignal *)changeLoginPassword:(NSString *)oldPassword withReplacePassword:(NSString *)replacePassword;
 
