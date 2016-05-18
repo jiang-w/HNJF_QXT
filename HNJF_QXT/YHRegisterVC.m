@@ -109,10 +109,6 @@
           subscribeError:^(NSError *error) {
               @strongify(self)
               [self.navigationController showErrorWithTitle:@"错误" andMessage:error.userInfo[@"msg"]];
-          }
-          completed:^{
-              @strongify(self)
-              [self.viewModel dismissViewModelAnimated:NO completion:nil];
           }];
      }];
     

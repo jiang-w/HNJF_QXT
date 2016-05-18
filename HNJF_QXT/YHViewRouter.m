@@ -52,7 +52,8 @@
              @"YHRechargeVM": @"YHRechargeVC",
              @"YHWithdrawVM": @"YHWithdrawVC",
              @"YHValidGesturePasswordVM": @"YHValidGesturePasswordVC",
-             @"YHSettingGesturePasswordVM": @"YHSettingGesturePasswordVC"
+             @"YHSettingGesturePasswordVM": @"YHSettingGesturePasswordVC",
+             @"YHProveAccountVM": @"YHProveAccountVC"
              };
 }
 

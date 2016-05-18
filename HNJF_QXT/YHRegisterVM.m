@@ -7,6 +7,7 @@
 //
 
 #import "YHRegisterVM.h"
+#import "YHProveAccountVM.h"
 #import "NSString+Utility.h"
 
 @interface YHRegisterVM ()
@@ -110,8 +111,13 @@
                               
                               RACSignal *loginSignal = [self.services.userService loginWithUserName:self.phoneNumber password:self.password];
                               
-                              return [[[RACSignal concat:@[validFormSignal, registerSignal, loginSignal]]
-                                       materialize] takeUntil:self.rac_willDeallocSignal];
+                              return [[[[RACSignal concat:@[validFormSignal, registerSignal, loginSignal]]
+                                        materialize] takeUntil:self.rac_willDeallocSignal]
+                                      doCompleted:^{
+                                          [self dismissViewModelAnimated:NO completion:^{
+                                              [self presentViewModel:[[YHProveAccountVM alloc] init] animated:YES completion:nil];
+                                          }];
+                                      }];
                           }];
 }
 

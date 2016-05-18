@@ -78,6 +78,8 @@
 		835D607E1CC7C89400E0AE04 /* YHFundProductTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835D607C1CC7C89400E0AE04 /* YHFundProductTableCell.m */; };
 		835D607F1CC7C89400E0AE04 /* YHFundProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835D607D1CC7C89400E0AE04 /* YHFundProductTableCell.xib */; };
 		835D60821CC7CDE900E0AE04 /* YHImageHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 835D60811CC7CDE900E0AE04 /* YHImageHeaderFooterView.m */; };
+		836992E41CEC170000AE324C /* YHProveAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 836992E31CEC170000AE324C /* YHProveAccountVC.m */; };
+		836992E71CEC18B100AE324C /* YHProveAccountVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 836992E61CEC18B100AE324C /* YHProveAccountVM.m */; };
 		836A1C981CD5BE9200BEE025 /* YHHighMarginDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 836A1C971CD5BE9200BEE025 /* YHHighMarginDetailHeader.xib */; };
 		836A1C9B1CD5BEE900BEE025 /* YHHighMarginDetailHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 836A1C9A1CD5BEE900BEE025 /* YHHighMarginDetailHeader.m */; };
 		836A1C9E1CD5D7A500BEE025 /* YHHighMarginDetailSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 836A1C9D1CD5D7A500BEE025 /* YHHighMarginDetailSummary.m */; };
@@ -240,6 +242,10 @@
 		835D607D1CC7C89400E0AE04 /* YHFundProductTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHFundProductTableCell.xib; sourceTree = "<group>"; };
 		835D60801CC7CDE900E0AE04 /* YHImageHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHImageHeaderFooterView.h; sourceTree = "<group>"; };
 		835D60811CC7CDE900E0AE04 /* YHImageHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHImageHeaderFooterView.m; sourceTree = "<group>"; };
+		836992E21CEC170000AE324C /* YHProveAccountVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHProveAccountVC.h; sourceTree = "<group>"; };
+		836992E31CEC170000AE324C /* YHProveAccountVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHProveAccountVC.m; sourceTree = "<group>"; };
+		836992E51CEC18B100AE324C /* YHProveAccountVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHProveAccountVM.h; sourceTree = "<group>"; };
+		836992E61CEC18B100AE324C /* YHProveAccountVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHProveAccountVM.m; sourceTree = "<group>"; };
 		836A1C971CD5BE9200BEE025 /* YHHighMarginDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHHighMarginDetailHeader.xib; sourceTree = "<group>"; };
 		836A1C991CD5BEE900BEE025 /* YHHighMarginDetailHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHHighMarginDetailHeader.h; sourceTree = "<group>"; };
 		836A1C9A1CD5BEE900BEE025 /* YHHighMarginDetailHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHHighMarginDetailHeader.m; sourceTree = "<group>"; };
@@ -411,6 +417,8 @@
 		831D6D801CB89D04001F0605 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				836992E21CEC170000AE324C /* YHProveAccountVC.h */,
+				836992E31CEC170000AE324C /* YHProveAccountVC.m */,
 				832A638D1CDDD6DE00288C6E /* YHRechargeVC.h */,
 				832A638E1CDDD6DE00288C6E /* YHRechargeVC.m */,
 				832A638F1CDDD6DE00288C6E /* YHRechargeVC.xib */,
@@ -436,6 +444,8 @@
 		831D6D811CB8A36A001F0605 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				836992E51CEC18B100AE324C /* YHProveAccountVM.h */,
+				836992E61CEC18B100AE324C /* YHProveAccountVM.m */,
 				832A63941CDDDEC800288C6E /* YHRechargeVM.h */,
 				832A63951CDDDEC800288C6E /* YHRechargeVM.m */,
 				832A639C1CDE27A400288C6E /* YHWithdrawVM.h */,
@@ -817,6 +827,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F7A7C61CA95EA900AB05B8 /* YHViewModel.m in Sources */,
+				836992E41CEC170000AE324C /* YHProveAccountVC.m in Sources */,
 				831D6D721CB7A844001F0605 /* YHMainTabBarViewModel.m in Sources */,
 				835BF8911CDBAB25002B48B5 /* YHAccountCenterVC.m in Sources */,
 				836F93E81CC918390088571E /* YHHighMarginProductListVC.m in Sources */,
@@ -841,6 +852,7 @@
 				83F34B451CBF89500044BA5C /* NSDictionary+Output.m in Sources */,
 				832B8D631CD1148E00E7CA58 /* YHFundCellViewModel.m in Sources */,
 				835BF8791CD9DA31002B48B5 /* YHResetPasswordVC.m in Sources */,
+				836992E71CEC18B100AE324C /* YHProveAccountVM.m in Sources */,
 				010245DD1CAA29C000EF9AC4 /* YHUserServiceImpl.m in Sources */,
 				83032E801CDF618400F70C17 /* YHColorDot.m in Sources */,
 				834D40931CC7528400A86E85 /* YHProductServiceImpl.m in Sources */,
